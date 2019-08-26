@@ -1,0 +1,34 @@
+body{
+  background:linear-gradient(#6CC4EE, white);
+}
+
+h1{
+  text-align: center;
+  font-family:'Pacifico', cursive;
+  color: black;
+}
+
+#title p{
+  text-align: center; 
+  font-family:'Pacifico', cursive;
+  color: black;
+}
+
+#parent{
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  width: 100%;
+}
+
+#left, #right, #middle{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 25px;
+  margin-top: 0px;
+  text-align: center;
+  width: 30%;
+  font-family:'Pacifico', cursive;
+  color: black;
+}
