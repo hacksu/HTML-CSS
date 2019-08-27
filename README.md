@@ -52,7 +52,8 @@ Now there are many different ways to add color to webpages through CSS:
 Fabulous! After the background color, let’s change the format of the words in our h1 and p tags
 
 H1{
-Text color : Can use hexadecimal or name 
+Text color : Can use hexadecimal or name  
+background:linear-gradient(#6CC4EE, white)
 Text-align aligns the words on the page whether it be toward the left, right, or center
 (My favorite) font-family allows for the user to choose how they view the font and it is compatible with all of the fonts on word documents 
     Examples: 
