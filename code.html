@@ -1,0 +1,75 @@
+<!-- our main header -->
+<h1>Some cool Pokémon</h1>
+<!-- sub-header (aka, slightly smaller) -->
+<h2>they do be makin a good squad</h2>
+<!-- paragraph text -->
+<p>Pokémon are pretty cool. Here we can put some text saying whatever we want.</p>
+<!-- the <pre> tag is similar to <p>, except it
+ respects existing formatting such as newlines. -->
+<div>
+  this content is separated
+</div>
+
+<!-- Inline Style Attribute -->
+<div style="background-color: red">
+  hey this should be a red box!
+</div>
+<!-- Style Tag -->
+<style>
+  h1 {
+    /* Give our title the color orange! */
+    color: orange;
+  }
+</style>
+
+<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+<style>
+  h1 {
+    font-family: 'Pacifico';
+  }
+</style>
+
+<!-- container for our pokemon -->
+<div id="pokemon-container">
+  <div class="pokemon">
+    <img src="https://img.pokemondb.net/artwork/pikachu.jpg">
+    <h2>Pikachu</h2>
+  </div>
+  <div class="pokemon">
+    <img src="https://img.pokemondb.net/artwork/charizard.jpg">
+    <h2>Charizard</h2>
+  </div>
+</div>
+
+<style>
+  #pokemon-container {
+  text-align: center;
+}
+/* .pokemon INSIDE #pokemon-container */
+#pokemon-container .pokemon {
+  display: inline-block;
+  padding: 20px;
+  transition: transform 0.15s;
+}
+#pokemon-container .pokemon:hover {
+  transform: scale(1.1);
+}
+</style>
+
+<!-- create a script tag -->
+<script>
+  // print to the console
+  console.log('Hi there!');
+  // Function to run when we click a specific button
+  function buttonClicked(button) {
+    let original = button.innerHTML;
+    // set the inner content of our button
+    button.innerHTML = "I've been clicked!";
+    // run the inner function after 5000 miliseconds, aka 5 seconds.
+    setTimeout(function() {
+      // revert to original content
+      button.innerHTML = original;
+    }, 5000)
+  };
+</script>
+<button onclick="buttonClicked(this)">Click me!</button>
