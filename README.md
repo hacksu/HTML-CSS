@@ -1,12 +1,12 @@
 # HTML, CSS, and JavaScript
-We'll be using [CodeSandbox](https://codesandbox.io/) to give an introduction to [HyperText Markup Language](https://www.w3schools.com/html/), [Cascading Style Sheets](https://www.w3schools.com/css/), and [JavaScript](https://www.w3schools.com/js/), the tools for designing a website!
+We'll be using [JSFiddle](https://jsfiddle.net/) to give an introduction to [HyperText Markup Language](https://www.w3schools.com/html/), [Cascading Style Sheets](https://www.w3schools.com/css/), and [JavaScript](https://www.w3schools.com/js/), the tools for designing a website!
 
-## What is CodeSandbox?
-[CodeSandbox](https://codesandbox.io/) is a website that provides a nice interface to prototype and host code and see your changes appear as you type them. Its really useful for trying stuff out and sharing your code with others.
+## What is JSFiddle?
+[JSFiddle](https://jsfiddle.net/) is a website that provides a nice interface to prototype and host code and see your changes appear as you type them. Its really useful for trying stuff out and sharing your code with others.
 
 We'll be using it because we can get right into coding without any setup.
 
-#### [Click Here to Start Coding with CodeSandbox](https://codesandbox.io/s)
+#### [Click Here to Start Coding with JSFiddle](https://jsfiddle.net/)
 
 ## Alright, so what is HTML?
 [HyperText Markup Language](https://www.w3schools.com/html/) is a format used to structure a webpage. Your browser recognizes HTML and can organize the content on your website based on how you define it to!
@@ -57,7 +57,7 @@ This is where "cascading" comes in.
 
 You can create CSS files that will include your styles, and then import them into your webpages! You can combine as many or as little of these as you want!
 
-In CodeSandbox, we'll be using the Style window for most of our styling. They handle linking the stylesheet for us.
+In JSFiddle, we'll be using the Style window for most of our styling. They handle linking the stylesheet for us.
 
 Let's import and use a font!
 ```html
