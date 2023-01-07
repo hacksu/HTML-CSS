@@ -1,0 +1,81 @@
+<html>
+
+<head>
+  <style>
+    /* Put CSS right below this */
+    div {
+      display: inline-block;
+      text-align: center;
+      margin: 20px;
+      font-family: sans-serif;
+    }
+
+    img {
+      display: block;
+    }
+
+    div p {
+      color: purple;
+      cursor: pointer;
+    }
+
+    div:hover {
+      background-color: paleturquoise;
+    }
+
+    div h2 {
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Put HTML right below this -->
+
+  <p>Hello, World!</p>
+  <h1>Green Eggs and Ham</h1>
+  <h2>Dr. Seuss</h2>
+  <p>I could not, would not, on a boat. I will not, will not, with a goat.</p>
+  <p>I do not like them in a house. I will not eat them with a mouse.</p>
+  <a href="https://crouton.net/" target="_blank">Click me!</a>
+  <p>Now, <strong>this</strong> is a story all about <em>how</em></p>
+  <details>
+    <summary>Click here to say howdy</summary>
+    🤠
+  </details>
+  <p>
+    You say goodbye <br />
+    and I say hello
+  </p>
+  <img src="https://crouton.net/crouton.png" />
+  <div>
+    <h2>Shopping List</h2>
+    <p>Ham</p>
+    <p>Bread</p>
+    <p>Eggs</p>
+    <p>Dog food</p>
+  </div>
+  <div>
+    <h2>Outfit Ideas</h2>
+    <p>Ham</p>
+    <p>Bread</p>
+    <p>Eggs</p>
+    <p>Dog food</p>
+  </div>
+
+  <script>
+    // Put JavaScript right below this
+    
+    const listItems = document.querySelectorAll("div p");
+
+    function crossOut(click) {
+      click.target.style.textDecoration = "line-through";
+    }
+
+    for (const item of listItems) {
+      item.onclick = crossOut;
+    }
+  </script>
+</body>
+
+</html>
