@@ -133,40 +133,48 @@ All of those tags have some kind of specific purpose, indicated by their name. B
 </div>
 ```
 
-So that's great. But these "columns" are just above and below each other, so the divs don't make much difference. Brace yourselves, because we're going to need to attempt to use CSS to alter the page layout to see what I mean. Click over to the CSS box in JSFiddle (finally, right?) and type this:
+So that's great. But these "columns" are just above and below each other, so the divs don't make much difference. To see what I mean, we're going to have to shake up the top-to-bottom normal page layout and place these columns side-by-side. The first step to doing that is to isolate them from the rest of the content by making a div that will contain these two existing divs. Initially, we used divs to put elements that should be in the same column in a group together; now, we're going to place our columns in a div that exists to contain the elements that we want to be in a row together. I'm going to give this overarching div an id attribute with the value "row-container".
+
+<div id="row-container">
+<div>
+  <h2>To-Do List - Yesterday</h2>
+  ...
+</div>
+<div>
+  <h2>To-Do List - Today</h2>
+  ...
+</div>
+</div>
+
+Now, brace yourselves, because we're going to need to attempt to use CSS to alter the page layout for the next step. Click over to the CSS box in JSFiddle (finally, right?) and type this:
 
 ```css
-div {
-  display: inline-block;
+#row-container {
+  display: flex;
 }
 ```
 
-Let's break this code down. The first thing we typed is a CSS selector, which specifies what elements we're altering. There are a lot of different ways to select elements in CSS, but this one is very simple: it selects all elements with the tag name "div" so we can do stuff to them. That stuff is expressed within the curly braces that immediately follow. There, we have one single declaration: `display: inline-block`. A declaration consists of a property, in this case "display", and a value, in this case "inline-block". There are many, many properties in CSS, each with their own set of possible values, but this property, the display property, is very popular, or at least it's used a lot; basically, it sets the layout mode that will be applied to elements that we're selecting. This is kind of like the anchoring mode that you can set for images in Microsoft Word. By default, divs use the "block" layout mode, meaning that they go above and below each other and don't allow any elements to exist to the left or right of them. After we change this, our second div will be allowed to fill the space to the right of the first one.
+Let's break this code down. The first thing we typed is a CSS selector, which specifies what elements we're altering. There are a lot of different ways to select elements in CSS, but if you use the pound sign/hashtag symbol, you can select elements according to their ID attribute, like this. We will then write declarations that apply to the selected things. Those are expressed within the curly braces that immediately follow. There, we have one single declaration: `display: flex;`. A declaration consists of a property, in this case "display", and a value, in this case "flex".
 
-You might have noticed that the image of a crouton is kind of interfering with our column layout. Or at least, I think it looks weird there. To fix this, we can select the image by its tag name and do the opposite of what we did with the divs; images are arranged according to the inline layout mode by default, but we can change that to "block":
+There are many, many properties in CSS, each with their own set of possible values, but this property, the display property, is very important; basically, it sets the layout mode that will be applied to elements that we're selecting. This is kind of like the anchoring mode that you can set for images in Microsoft Word, to control whether text goes around them or above and below them. When you set the layout mode of a div to "flex", its becomes a row or column (by default a row) in which you can control the alignment and spacing of elements in a fine-grained way.
 
-```css
-img {
-  display: block;
-}
-```
-
-We could be here for a while talking about the CSS display/layout modes, which melt brains, break spirits, and shatter families apart every day. But it would get boring, just rearranging stuff on the page for 72 hours straight, so I'm going to say "good luck" and move on. Our div columns are still kind of ugly because they're smashed together. Let's fix that with a whole batch of CSS properties.
+Our div columns are still kind of ugly because they're smashed together. Let's fix that with a few more CSS properties.
 
 ```css
-div {
-  display: inline-block;
+#row-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
   text-align: center;
-  margin: 20px;
   font-family: sans-serif;
 }
 ```
 
-These are relatively straightforward. The first one centers text. The second adds space around our divs; a margin is what you call the blank space around the content on a printed page, and we're adding blank space around our elements. We're expressing how much margin to add by using a distance expressed with the units "px", which stands for pixels. 1px is not actually the same size as one pixel on your screen, but it's close enough a lot of the time. The point is that you can make the number bigger or smaller and adjust it. Changing what we would normally call the font is done with the property font-family. Setting the font to sans-serif gets you a little closer to how text is actually displayed on most websites.
+These properties are relatively straightforward. The second one stretches our row to take the whole width of the page. The third spaces out the elements in the row evenly; without that, they'll default to sitting at the beginning of the row, no matter how wide it is. Finally, I want to center the text inside the columns and change the font because I think that looks better.
 
-Now we're experienced with CSS rules. This is really all you do with CSS; you put a selector to indicate which elements you're doing stuff too, and then you do stuff to them, like changing the text alignment. I should probably give everyone a second to catch up with these four basic rules that we're using.
+Now we're experienced with CSS rules. This is most of what you do with CSS; you put a selector to indicate which elements you're doing stuff to, and then you say what stuff you want to do to them, like changing the text alignment. I should probably give everyone a second to catch up with these layout rules that we're using.
 
-And now that we're experienced with basic rules, let's try using some different selectors. Remember, those are the things in front of the curly braces that determine which elements we're controlling. In our columns, which are created by these divs, we have h2 elements for our list headers and p elements for our items. Let's try just selecting the p elements that are inside the columns, so we're just altering the items. We can do this by just putting `div p` as our selector; when you separate two tag names with a space, you select all the elements with the second tag name that are inside the first tag name; `div p` selects the content that's right after where you see the start tag `div` and then the start tag `p`.
+And now that we're experienced with rules, let's try using some different selectors. Remember, those are the things in front of the curly braces that determine which elements we're controlling. In our columns, which are created by these divs, we have h2 elements for our list headers and p elements for our items. Let's try selecting just the p elements that are inside the columns. We can do this by just putting `div p` as our selector: when you separate two tag names with a space, you select all the elements with the second tag name that are inside the first tag name.
 
 ```css
 div p {
@@ -187,45 +195,34 @@ There are [a lot of different named colors](http://davidbau.com/colors/) in CSS,
 
 ![Chart of colored rectangles with their names overlaid.](colors.png)
 
-One thing that's bothering me there is that when we give our div a background color, we can see that the headers are pretty close to the left and right edge of the div. To fix that, we can just put a margin around the headers, just like how we put a margin around the divs themselves.
+So yeah. CSS is used both to lay the page out and to change the visual style and appearance of things in it. Using the display property changes elements' layout modes, so for example, you can use `display: flex;` to create rows and change how elements are aligned and spaced out inside them; (you can also create columns in the same layout mode in case you want to space out and align elements within columns;) and there are a bunch of words involved that you sadly just have to memorize. And that's probably enough CSS for one lifetime.
 
-```css
-div h2 {
-  margin: 10px;
-}
-```
-
-And that's probably enough CSS for one lifetime.
-
-JavaScript is completely different from either of the two previous languages. It is an honest-to-god real programming language in which you write statements that are executed in sequence according to logical expressions that you specify. But if you're new to this kind of thing, don't worry too much - JavaScript is a full-on programming language where you can basically write any program that you can write in any programming language, but here, we're going to use it only for its original intended purpose - manipulating the things on the page that were originally created by a combination of HTML and CSS, so you should be able to follow along with the concepts even if the syntax gets kind of dense. As a programming language, JavaScript uses variables - so we're going to need to start by storing some HTML elements in a variable.
+JavaScript is completely different from either of the two previous languages. It is an honest-to-god real programming language in which you write statements that are executed in sequence according to logical expressions that you specify. There is no real limit to the kinds of programs you can write in JavaScript, but here, we're going to use it only for its original intended purpose - manipulating things on webpages. As a programming language, JavaScript uses variables - so we're going to start by storing an HTML element in a variable.
 
 ```js
-const listItems = document.querySelectorAll("div p");
+const rowContainer = document.querySelector("#row-container");
 ```
 
-This is called an assignment statement, and basically what it does is store the thing on the right side of the equals sign in the name that's on the left side of the equals sign. The thing on the left side of the equals sign is called a variable. You might say that there are, in fact, two things on the left side of the equals sign, but the first thing, "const", is more like an annotation than a name: it just indicates that we're creating a brand new variable, which I am calling "listItems", and that that variable is going to be constant - I don't want to be able to change what's stored in it later. The thing on the right side of the equals sign is a function call that grabs all the HTML elements on the page that match the selector "div p". You've seen this selector before. We turned all these list items purple by using it up here, in the CSS. It turns out you can use these guys in JavaScript too. So, in summary, we are selecting all of our list items and storing them in a variable that is called "listItems".
+This is called an assignment statement, and basically what it does is store the thing on the right side of the equals sign under the name that's on the left side of the equals sign. The thing on the left side of the equals sign is called a variable. You might say that there are, in fact, two things on the left side of the equals sign, but the first thing, "const", is more like an annotation than a name: it just indicates that we're creating a brand new variable, which I am calling "rowContainer", and that that variable is going to be constant - I don't want to be able to change what's stored in it later. The thing on the right side of the equals sign is a function call that grabs the HTML element on the page that matches the selector "#row-container". You've seen this selector before. We used it to select a div and turn it into a row of things. It turns out you can use these guys in JavaScript too. So, in summary, we are storing the HTML element with the ID attribute "row-container" in the variable `rowContainer`.
 
-The next thing we want to do is define a way to edit or alter the items that we have in our list. We are going to do that by creating what is called an event listener. An event listener is a type of function, which is a piece of code that can be run over and over again. You can define functions a few ways in JavaScript, but the most basic way is to write the following: the word "function"; the name of the function; a parenthesized list of names for the inputs to the function; and then the function's executable code inside curly braces.
+The next thing we want to do is define an action that will edit or alter the items that we have in our list. We are going to do that by creating what is called an event listener. An event listener is a type of function, which is a piece of code that can be run over and over again. You can define functions a few ways in JavaScript, but the most basic way is to write the following: the word "function"; the name of the function; a parenthesized list of input variables for the function; and then the function's executable code inside curly braces.
 
 ```js
 function crossOut(click) {
-	click.target.style.textDecoration = "line-through";
+  if (click.target.tagName == "P")
+	  click.target.style.textDecoration = "line-through";
 }
 ```
 
-An event listener is triggered by an event, and an event is a thing that a user does, such as: click. So the input to our function is a representation of a click that just happened, and thus I am using the word "click" as the name I want it to have. This particular representation, which is called an object, works sort of like a variable with more variables inside it. We can reach deep into this representation of someone clicking on something: we can access the target, which is an HTML element, and then the style of the target, which is the set of CSS rules that determine how it's displayed, and then the CSS property called "textDecoration", and then we can give it the  value "line-through". Unfortunately, all of these variable names except "click" are a built-in part of the browser's internal representation of events and HTML elements, which is called the Document Object Model or DOM, and they just have to be learned. I promise that they are pretty easy to learn when you study the DOM as its own thing but that would be a whole separate lesson, so for now, here are some names of things; string them together.
+An event listener is triggered by an event, and an event is a thing that a user does, such as: a click. So the input to our function is a representation of a click that just happened, and thus I am using the word "click" as the name I want it to have. This particular representation is an object, which works sort of like a variable with more variables inside it. We can reach the variables that are inside it by using the dot operator. We can access the event target, which is the HTML element that got clicked. We can access the target's tag name, which will be in all caps for historical reasons, and we can check to see if it's a "p" element that we might want to cross out. And then we can access the style of the target, which is the set of CSS rules that determine how it's displayed, and then the CSS property called "textDecoration", and then we can give it the value "line-through". Unfortunately, all of these variable names except "click" are a built-in part of the browser's internal representation of events and HTML elements, and they just have to be learned. They are part of a system that kinda-sorta makes sense, but for now, here are some names of things; string them together.
 
-Finally, we are going to attach this event listener to each of the elements contained in our variable "listItems". We are going to do this with a for-loop, which is a programming construct that runs some code repeatedly, usually once for each item in a list or collection. This code will run over and over, once for each element in our list:
+Finally, we are going to attach our event listener to the element we selected earlier by setting the onClick variable that exists inside it.
 
 ```js
-for (const item of listItems) {
-	item.onclick = crossOut;
-}
+rowContainer.onclick = crossOut;
 ```
 
-What it does is simple: it assigns each HTML element that was captured in "listItems" to a variable named "item". Each HTML element exists in JavaScript as an object from the DOM, like I said, which means that the variable that it's stored in will have more variables inside it, and in this case we want to assign our function (which I called "crossOut") to the inner variable called "onclick".
-
-Once we have done that, every actual real life click on one of these list elements will trigger our event listener function to run. This function will edit one of the CSS style rules that apply to our HTML element. So, look: when you click on one of our list items, it gets crossed out.
+Once we have done that, every actual real life click inside our row of lists will trigger our event listener function to run. This function will edit one of the CSS style rules that apply to our HTML element. So, look: when you click on one of our list items, it gets crossed out.
 
 Now, you may notice that nothing in our HTML or CSS text boxes changes when this event listener executes. Our HTML and CSS serve to initially set up our webpage; once JavaScript starts executing, all bets are off, and the content of the page can diverge wildly from how it was originally specified. You can use the well-known "Inspect Element" tool that browsers provide to get a look at how the HTML and CSS would look if they kept up to date with the changes that JavaScript makes, although it might take a while to get used to all the stuff that that tool shows you.
 
