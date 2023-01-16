@@ -30,23 +30,23 @@ So there you have it. This is called an HTML element: there's a start tag, conte
 
 Well. Maybe there's other stuff to learn. The weird thing about HTML is that unlike most programming languages, it's not really much of a programming language: HTML "programs" aren't necessarily interactive, it's not really grounded in logic or consistency, and everything is kind of based a lot on vibes. They don't want me to tell you this, but with a little help from the other web languages, you can stop listening here and make a whole beautiful web page out of \<p> tags if you want.
 
-But there are, in fact, 140ish named tags other than the one named "p", so maybe we'd better figure out why. The thing, is "p" literally means "paragraph" - that's what it stands for, it's only one letter long because back when the first web page was created, the "aragraph" would've taken a long time to send - but that meaning is honestly mostly important because of the vibes that it imparts; or, what people with big fancy brains call its semantic meaning. We can bend space and time and use \<p> elements for all kinds of stuff, but the fact is, we've used a tag named "paragraph", we'd better have a pretty paragraphy use for it, or else we're contradicting ourselves and writing confusing code which we'll look back at a month later and hate ourselves for. And in accordance with this semantic meaning, browsers display a paragraph a certain way. They have black text in a proper-looking serif font at a medium font size, and, if you have multiple paragraphs, each is displayed below the previous one and there's a decent amount of space in between. It's very paragraphy.
+But there are, in fact, 140ish named tags other than the one named "p", so maybe we'd better figure out why. The thing, is "p" literally means "paragraph" - that's what it stands for, it's only one letter long because back when the first web page was created, the "aragraph" would've taken a long time to send - but that meaning is honestly mostly important because of the vibes that it imparts; or, what people with big fancy brains call its semantic meaning. In practice, we can bend space and time and use \<p> elements for all kinds of stuff, but the fact is, we've used a tag named "paragraph", we'd better have a pretty paragraphy use for it, or else we're writing confusing code. And in accordance with this semantic meaning, browsers display paragraphs a certain way. They have black text in a proper-looking serif font at a medium font size, and, if you have multiple paragraphs, each is displayed below the previous one with a gap between them. It's very paragraphy.
 
 ```html
-<p>I could not, would not, on a boat. I will not, will not, with a goat.</p>
-<p>I do not like them in a house. I will not eat them with a mouse.</p>
+<p>Call me Ishmael.</p>
+<p>Four score and seven years ago...</p>
 ```
 
-Now, like I said, we could change how this stuff looks, and practically everyone does at least change the font, but for now, we should probably learn some of those other 140-something tags so we can let paragraphs be paragraphy and just take advantage of the semantic meaning and the pre-defined styles of the other ones. Like header tags:
+Now, like I said, we could just change how this stuff looks (and practically everyone does at least change the font) but for now, we should probably learn some of those other 140-something tags, so we can let paragraphs be paragraphy and just take advantage of the semantic meaning and the pre-defined styles of the other ones. Like header tags:
 
 ```html
 <h1>Green Eggs and Ham</h1>
 <h2>Dr. Seuss</h2>
-<p>I could not, would not, on a boat. I will not, will not, with a goat.</p>
-<p>I do not like them in a house. I will not eat them with a mouse.</p>
+<p>I could not, would not, would not, note.</p>
+<p>I will not, still not, shall not float.</p>
 ```
 
-So yeah, these are some other tag names, which happen to have numbers in them. And H1 and H2 stand for heading 1 and heading 2, with heading 1 having the semantic meaning of being more important and therefore, look, it shows up as bigger text by default. So, these are tags we should use for things like titles and author names. In theory there are also headings 3 through 12, which you can use if you like to signify less and less important headings. Um, you don't have to type all this exactly, but is everyone who wants to try out writing this HTML caught up?
+I think that's how that book goes; I could never really follow it. (I was a very stupid child.) So yeah, these are some other tag names, which happen to have numbers in them. And H1 and H2 stand for heading 1 and heading 2, with heading 1 having the semantic meaning of being more important and therefore, look, it shows up as bigger text by default. Those are tags we should use for things like titles and author names. In theory there are also headings 3 through 12, which you can use if you like to signify less and less important headings. Um, you don't have to type all this exactly, but is everyone who wants to try out writing this HTML caught up?
 
 Because next, I'm going to introduce something iconic and kind of weird: the anchor tag.
 
@@ -54,21 +54,21 @@ Because next, I'm going to introduce something iconic and kind of weird: the anc
 <a>Click me!</a>
 ```
 
-Well. You probably all know that that's not what it usually looks like. To release its true form, we need to add our first attribute. Attributes are placed after the tag name in the start tag and add some information to the HTML element.
+Well. You probably all know that that's not what it usually looks like. To manifest its true form, we need to add our first attribute. Attributes are placed after the tag name in the start tag and add some information to the HTML element.
 
 ```html
 <a href="https://crouton.net/">Click me!</a>
 ```
 
-So yeah. An anchor tag will create a link to another web page so you can go there if you click it. Except, wait, ours is kind of weird right now, because the new page will open inside the little JSFiddle box. Try this:
+So yeah. An anchor tag with an href attribute will create a link to another web page so you can go there if you click it. Except, wait, ours is kind of weird right now, because the new page will open inside the little JSFiddle box. Try this:
 
 ```html
 <a href="https://crouton.net/" target="_blank">Click me!</a>
 ```
 
-And now we have two examples of attributes. They live in start tags, go after the tag name, and say `this="that"`. The first thing is called the attribute name and the second thing, in quotes, is called the attribute value. The "href" attribute gives the information "what page should this link link to" and the "target" attribute gives the information "this page should be opened in a new tab." We need that second thing when using JSFiddle because we don't want the page we're linking to to be trapped in the box, but it's also useful whenever you want a link to open a new tab so the viewer doesn't lose their place on the last page or whatever.
+And now we have two examples of attributes. Attributes live in start tags, go after the tag name, and say `this="that"`. The first thing is called the attribute name and the second thing, in quotes, is called the attribute value. The "href" attribute gives the information "what page should this link link to" and the "target" attribute gives the information "this page should be opened in a new tab." We need that second thing when using JSFiddle because we don't want the page we're linking to to be trapped in the box, but it's also useful whenever you want a link to open a new tab so the viewer doesn't lose their place on the last page or whatever.
 
-And you might, at this point, feel a little like you're looking at a bunch of gibberish, and that is valid and okay. The thing about these web languages is that there's a bunch of stuff in them that made sense to someone at some point and now we're stuck with it because changing it would mean breaking compatability with a whole universe of old websites. This attribute name, "href," stands for "hypertext reference" because at some point someone thought that term would become a thing and then that term did not become a thing. However, it is immortalized in, for example, the very first web page and thus we just kind of have to learn it. Same with the "_blank" value for "target"; the underscore is there because of history. It might look a little strange and maybe it is but you can simply learn it and declare victory and move on.
+And you might, at this point, feel a little like you're looking at a bunch of gibberish, and that is basically correct. The thing about these web languages is that there's a bunch of stuff in them that made sense to someone at some point and now we're stuck with it because changing it would mean breaking compatability with a whole universe of old websites. This attribute name, "href," stands for "hypertext reference" because at some point someone thought that term would become a thing, and then, that term did not become a thing. However, we're stuck with it; it's used in the very first web page; and thus we just have to learn it. Same with the "_blank" value for "target"; the underscore is there because of history and if you leave it out weird stuff might start happening. It all looks a little strange but we must simply learn it and declare victory and move on.
 
 Now that we have the basics down, we can probably go through some more types of tags pretty quickly. Watch this, you can put HTML elements inside HTML elements:
 
@@ -76,7 +76,7 @@ Now that we have the basics down, we can probably go through some more types of 
 <p>Now, <strong>this</strong> is a story all about <em>how</em></p>
 ```
 
-Back in the day, they used to use tags just called "b" and "i" for a similar effect but those tags are old and everyone who's used them has died by now, and if you use them, you will have an encounter with ghosts.
+Back in the day, they used to use tags just called "b" and "i" for a similar effect but those tags are old and everyone who used them has died by now, and if you invoke them, you will have an encounter with ghosts.
 
 "details" tags are interactive:
 
@@ -93,7 +93,7 @@ You can add "summary" tags inside them to change the initially visible text:
 </details>
 ```
 
-Putting tags on different lines like that is allowed. HTML wants you to be able to format your code with spaces and newlines without changing how the content is displayed, so we can actually put new lines practically wherever we want. If we want to put an actual new line that will show up for real in the content, one thing that we can do use the \<br /> tag, which stands for line break:
+Putting tags on different lines like that is allowed. HTML wants you to be able to format your code with spaces and newlines without changing how the content is displayed, so we can actually put new lines practically wherever we want. If we want an actual line break that will show up for real in the content, one thing that we can do use the \<br /> tag:
 
 ```html
 <p>
@@ -102,7 +102,7 @@ Putting tags on different lines like that is allowed. HTML wants you to be able 
 </p>
 ```
 
-So if I remove that tag, there's no line break in the result, even though there is in the code. We need the \<br />. You may notice something weird about that particular tag: since there's no real content that it can encompass, there's no need for it to have a start and an end tag. Instead, it's what's referred to as self-closing: it ends just as it begins. (Most people will use that end-tag-style slash to indicate this, but you technically don't even need that.)
+See, if I remove that, there's no line break in the result, even though there is in the code. We need the \<br />. You may notice something weird about that particular tag: since there's no real content that it can encompass, there's no need for it to have a start and an end tag. Instead, it's what's referred to as self-closing: it ends at the same place it begins. (Most people will use that end-tag-style slash to indicate this, but you technically don't even need that.)
 
 And here's another very popular self-closing tag:
 
@@ -118,18 +118,18 @@ All of those tags have some kind of specific purpose, indicated by their name. B
 
 ```html
 <div>
-  <h2>Shopping List</h2>
-  <p>Ham</p>
-  <p>Bread</p>
-  <p>Eggs</p>
-  <p>Dog food</p>
+  <h2>To-Do List - Yesterday</h2>
+  <p>Walk dog</p>
+  <p>Solve world hunger</p>
+  <p>Do laundry</p>
+  <p>Be less sad</p>
 </div>
 <div>
-  <h2>Halloween costume ideas</h2>
-  <p>Ham</p>
-  <p>Bread</p>
-  <p>Eggs</p>
-  <p>Dog food</p>
+  <h2>To-Do List - Today</h2>
+  <p>Walk dog</p>
+  <p>Solve world hunger</p>
+  <p>Actually do laundry</p>
+  <p>Be less sad</p>
 </div>
 ```
 
@@ -141,7 +141,7 @@ div {
 }
 ```
 
-Let's break this code down. The first thing we typed is a CSS selector, which specifies what elements we're altering. There are a lot of different ways to select elements in CSS, but this one is very simple: it selects all elements with the tag name "div" so we can do stuff to them. That stuff is expressed within the curly braces that immediately follow. There, we have one single declaration: `display: inline-block`. A declaration consists of a property, in this case "display", and a value, in this case "inline-block". There are many, many properties in CSS, each with their own set of possible values, but this property, the display property, is very popular, or at least it's used a lot; basically, it sets the layout mode that will be applied to elements that we're selecting. This is kind of like the anchoring mode that you can set for images in Microsoft Word. By default, divs have a "block" layout mode, which basically means that they go above and below each other and don't allow any elements to exist to the left or right of them. After we change this, our second div will be allowed to fill the space to the right of the first one.
+Let's break this code down. The first thing we typed is a CSS selector, which specifies what elements we're altering. There are a lot of different ways to select elements in CSS, but this one is very simple: it selects all elements with the tag name "div" so we can do stuff to them. That stuff is expressed within the curly braces that immediately follow. There, we have one single declaration: `display: inline-block`. A declaration consists of a property, in this case "display", and a value, in this case "inline-block". There are many, many properties in CSS, each with their own set of possible values, but this property, the display property, is very popular, or at least it's used a lot; basically, it sets the layout mode that will be applied to elements that we're selecting. This is kind of like the anchoring mode that you can set for images in Microsoft Word. By default, divs use the "block" layout mode, meaning that they go above and below each other and don't allow any elements to exist to the left or right of them. After we change this, our second div will be allowed to fill the space to the right of the first one.
 
 You might have noticed that the image of a crouton is kind of interfering with our column layout. Or at least, I think it looks weird there. To fix this, we can select the image by its tag name and do the opposite of what we did with the divs; images are arranged according to the inline layout mode by default, but we can change that to "block":
 
@@ -255,4 +255,6 @@ If we have time, there's one more thing that you can try if you want. I want you
 </html>
 ```
 
-These are the actual most basic HTML tags that form the backbone for every page. This gives you an organized way to combine HTML, CSS, and JavaScript into a single final file; it's just standard boilerplate-type stuff and you can just find a template like this online and copy-paste that into every new webpage that you ever create. Within these tags, you should insert the content we have created where the comments say to (yes, each language has its own different style of comments that let you leave human-readable notes that don't do anything.) Then, you can save the file as a .html file. Then you can open it in your web browser. And then you can send the file to anyone, upload the file to website hosting services like Neocities or Github Pages, or place the file in a special folder that Kent gives you to make it available on the public Internet. (That requires a seperate program to log into a certain account that Kent gives you - we can go over that after the lesson if you want.) Anyway: HTML. CSS. JavaScript. Content, presentation, interactivity. Combine them and utilize all of their different powers. That is how you create a webpage.
+These are the actual most basic HTML tags that form the backbone for every page. This gives you an organized way to combine HTML, CSS, and JavaScript into a single final file; it's just standard boilerplate-type stuff and you can just find a template like this online and copy-paste that into every new webpage that you ever create. JSFiddle was secretly putting our content into a template like this behind the scenes.
+
+Within these tags, you should insert the content we have created where the comments say to (yes, each language has its own different style of comments that let you leave human-readable notes that don't do anything.) Then, you can save the file as a .html file. Then you can open it in your web browser. And then you can send the file to anyone, upload the file to website hosting services like Neocities or Github Pages, or place the file in a special folder that Kent gives you to make it available on the public Internet. (That requires a seperate program to log into a certain account that Kent gives you - we can go over that after the lesson if you want.) Anyway: HTML. CSS. JavaScript. Content, presentation, interactivity. Combine them and utilize all of their different powers. That is how you create a webpage.
