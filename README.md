@@ -33,8 +33,7 @@ Well. Maybe there's other stuff to learn. The weird thing about HTML is that unl
 But there are, in fact, 140ish named tags other than the one named "p", so maybe we'd better figure out why. The thing, is "p" literally means "paragraph" - that's what it stands for, it's only one letter long because back when the first web page was created, the "aragraph" would've taken a long time to send - but that meaning is honestly mostly important because of the vibes that it imparts; or, what people with big fancy brains call its semantic meaning. In practice, we can bend space and time and use \<p> elements for all kinds of stuff, but the fact is, we've used a tag named "paragraph", we'd better have a pretty paragraphy use for it, or else we're writing confusing code. And in accordance with this semantic meaning, browsers display paragraphs a certain way. They have black text in a proper-looking serif font at a medium font size, and, if you have multiple paragraphs, each is displayed below the previous one with a gap between them. It's very paragraphy.
 
 ```html
-<p>Call me Ishmael.</p>
-<p>Four score and seven years ago...</p>
+<p>In the beginning the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.</p>
 ```
 
 Now, like I said, we could just change how this stuff looks (and practically everyone does at least change the font) but for now, we should probably learn some of those other 140-something tags, so we can let paragraphs be paragraphy and just take advantage of the semantic meaning and the pre-defined styles of the other ones. Like header tags:
@@ -42,8 +41,8 @@ Now, like I said, we could just change how this stuff looks (and practically eve
 ```html
 <h1>Green Eggs and Ham</h1>
 <h2>Dr. Seuss</h2>
-<p>I could not, would not, would not, note.</p>
-<p>I will not, still not, shall not float.</p>
+<p>I could not, would not, would not, boat.</p>
+<p>I will not, still not, shall not stoat.</p>
 ```
 
 I think that's how that book goes; I could never really follow it. (I was a very stupid child.) So yeah, these are some other tag names, which happen to have numbers in them. And H1 and H2 stand for heading 1 and heading 2, with heading 1 having the semantic meaning of being more important and therefore, look, it shows up as bigger text by default. Those are tags we should use for things like titles and author names. In theory there are also headings 3 through 12, which you can use if you like to signify less and less important headings. Um, you don't have to type all this exactly, but is everyone who wants to try out writing this HTML caught up?
