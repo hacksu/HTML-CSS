@@ -134,6 +134,7 @@ All of those tags have some kind of specific purpose, indicated by their name. B
 
 So that's great. But these "columns" are just above and below each other, so the divs don't make much difference. To see what I mean, we're going to have to shake up the top-to-bottom normal page layout and place these columns side-by-side. The first step to doing that is to isolate them from the rest of the content by making a div that will contain these two existing divs. Initially, we used divs to put elements that should be in the same column in a group together; now, we're going to place our columns in a div that exists to contain the elements that we want to be in a row together. I'm going to give this overarching div an id attribute with the value "row-container".
 
+```html
 <div id="row-container">
 <div>
   <h2>To-Do List - Yesterday</h2>
@@ -144,6 +145,7 @@ So that's great. But these "columns" are just above and below each other, so the
   ...
 </div>
 </div>
+```
 
 Now, brace yourselves, because we're going to need to attempt to use CSS to alter the page layout for the next step. Click over to the CSS box in JSFiddle (finally, right?) and type this:
 
