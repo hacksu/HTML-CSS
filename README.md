@@ -175,19 +175,19 @@ These properties are relatively straightforward. The second one stretches our ro
 
 Now we're experienced with CSS rules. This is most of what you do with CSS; you put a selector to indicate which elements you're doing stuff to, and then you say what stuff you want to do to them, like changing the text alignment. I should probably give everyone a second to catch up with these layout rules that we're using.
 
-And now that we're experienced with rules, let's try using some different selectors. Remember, those are the things in front of the curly braces that determine which elements we're controlling. In our columns, which are created by these divs, we have h2 elements for our list headers and p elements for our items. Let's try selecting just the p elements that are inside the columns. We can do this by just putting `div p` as our selector: when you separate two tag names with a space, you select all the elements with the second tag name that are inside the first tag name.
+And now that we're experienced with rules, let's try using some different selectors. Remember, those are the things in front of the curly braces that determine which elements we're controlling. In our columns, which are created by these divs, we have h2 elements for our list headers and p elements for our items. Let's try selecting just the p elements that are inside the columns. We can do this by just putting `#row-container p` as our selector: when you separate two selectors with a space, you first take all the elements that are inside the one indicated by the first selector, and then narrow it down to the elements that match the second selector. (Tag names work as selectors all by themselves.)
 
 ```css
-div p {
+#row-container p {
   color: purple;
   cursor: pointer;
 }
 ```
 
-Notice that the other paragraphs that we have up above haven't changed; only the ones inside divs did. (We could select all the paragraphs everywhere by just using "p" as a selector, but I want to let them rest.) One more really fun selector is the "hover" one, which selects elements only when your mouse is over them.
+Notice that the other paragraphs that we have up above haven't changed; only the ones inside divs did. (We could select all the paragraphs everywhere by just using "p" as a selector, but I want to let them rest.) One more really fun selector is the "hover" one, which only applies to elements when your mouse is over them.
 
 ```css
-div:hover {
+#row-container:hover {
   background-color: paleturquoise;
 }
 ```
@@ -196,7 +196,7 @@ There are [a lot of different named colors](http://davidbau.com/colors/) in CSS,
 
 ![Chart of colored rectangles with their names overlaid.](colors.png)
 
-So yeah. CSS is used both to lay the page out and to change the visual style and appearance of things in it. Using the display property changes elements' layout modes, so for example, you can use `display: flex;` to create rows and change how elements are aligned and spaced out inside them; (you can also create columns in the same layout mode in case you want to space out and align elements within columns;) and there are a bunch of words involved that you sadly just have to memorize. And that's probably enough CSS for one lifetime.
+So yeah. CSS is used both to lay the page out and to change the visual style and appearance of things in it. Using the display property changes elements' layout modes, so for example, you can use `display: flex;` to create rows (or columns) and change how elements are aligned and spaced out inside them; and there are a bunch of words involved that you sadly just have to memorize. And that's probably enough CSS for one lifetime.
 
 JavaScript is completely different from either of the two previous languages. It is an honest-to-god real programming language in which you write statements that are executed in sequence according to logical expressions that you specify. There is no real limit to the kinds of programs you can write in JavaScript, but here, we're going to use it only for its original intended purpose - manipulating things on webpages. As a programming language, JavaScript uses variables - so we're going to start by storing an HTML element in a variable.
 
