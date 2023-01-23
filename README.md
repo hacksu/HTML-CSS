@@ -227,7 +227,7 @@ Once we have done that, every actual real life click inside our row of lists wil
 
 Now, you may notice that nothing in our HTML or CSS text boxes changes when this event listener executes. Our HTML and CSS serve to initially set up our webpage; once JavaScript starts executing, all bets are off, and the content of the page can diverge wildly from how it was originally specified. You can use the well-known "Inspect Element" tool that browsers provide to get a look at how the HTML and CSS would look if they kept up to date with the changes that JavaScript makes, although it might take a while to get used to all the stuff that that tool shows you.
 
-[Final JSFiddle](https://jsfiddle.net/3t8ecud9/)
+[Final JSFiddle](https://jsfiddle.net/ytms1g6u/)
 
 If we have time, there's one more thing that you can try if you want. I want you to open up a new blank plain text file in an editor like Notepad, TextEdit, or nano. Copy down or copy and paste the following HTML tags, I'll put them in the Discord:
 
