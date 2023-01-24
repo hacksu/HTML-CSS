@@ -26,17 +26,17 @@ And, wait! I almost forgot. There's one more thing you probably want to have wit
 <p>Hello, World!</p>
 ```
 
-So there you have it. This is called an HTML element: there's a start tag, content, end tag, and the content shows up in the results square (for you too, right 🥺? You just have to hit "run"). And the weird thing is, we could stop here, that's all the HTML you really need to know.
+So there you have it. This is called an HTML element: there's a start tag, content, end tag, and the content shows up in the results square (for you too, right 🥺? You just have to hit "run").
 
-Well. Maybe there's other stuff to learn. The weird thing about HTML is that unlike most programming languages, it's not really much of a programming language: HTML "programs" aren't necessarily interactive, it's not really grounded in logic or consistency, and everything is kind of based a lot on vibes. They don't want me to tell you this, but with a little help from the other web languages, you can stop listening here and make a whole beautiful web page out of \<p> tags if you want.
-
-But there are, in fact, 140ish named tags other than the one named "p", so maybe we'd better figure out why. The thing, is "p" literally means "paragraph" - that's what it stands for, it's only one letter long because back when the first web page was created, the "aragraph" would've taken a long time to send - but that meaning is honestly mostly important because of the vibes that it imparts; or, what people with big fancy brains call its semantic meaning. In practice, we can bend space and time and use \<p> elements for all kinds of stuff, but the fact is, we've used a tag named "paragraph", we'd better have a pretty paragraphy use for it, or else we're writing confusing code. And in accordance with this semantic meaning, browsers display paragraphs a certain way. They have black text in a proper-looking serif font at a medium font size, and, if you have multiple paragraphs, each is displayed below the previous one with a gap between them. It's very paragraphy.
+To show how other tag names work, let's try another example. Instead of "p", we'll try "h2":
 
 ```html
-<p>In the beginning the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.</p>
+<h1>Green Eggs and Ham</h2>
 ```
 
-Now, like I said, we could just change how this stuff looks (and practically everyone does at least change the font) but for now, we should probably learn some of those other 140-something tags, so we can let paragraphs be paragraphy and just take advantage of the semantic meaning and the pre-defined styles of the other ones. Like header tags:
+There are two ways in which the p tag and the h1 tag differ. One is the default style that web browsers will apply when it encounters them. the text in a "p" element, will create text in kind of a small font, spaced fairly far apart from the text in other elements; the "h1" tag, which stands for "header... 1", will have bigger text so it looks more important. That is the surface level difference between the two tags, but the thing is, that can be completely erased. In modern web development, a lot of people will actually remove all these default differences between tags completely so they can start with a clean slate and decide how things look on their own. The second, more important difference between types of tags is their semantic meaning, or to put it more succinctly, their vibes. "h1" should be used for headers; "p" tags should be used for paragraphy text. If you just want big text, you should not use a header tag; you should change the style of a "p" or other tag, which we'll cover how to do later, in order to preserve the vibes attached to each tag names.
+
+Basically, HTML is not a real programming language and there are rarely concrete, logical uses for things. It's mostly just vibes. Anyway, there's also an "h2" tag, which conveys text that is slightly less important than h1. And generally you put paragraphs below headers, so to complete the example.
 
 ```html
 <h1>Green Eggs and Ham</h1>
@@ -45,7 +45,7 @@ Now, like I said, we could just change how this stuff looks (and practically eve
 <p>I will not, still not, shall not stoat.</p>
 ```
 
-I think that's how that book goes; I could never really follow it. (I was a very stupid child.) So yeah, these are some other tag names, which happen to have numbers in them. And H1 and H2 stand for heading 1 and heading 2, with heading 1 having the semantic meaning of being more important and therefore, look, it shows up as bigger text by default. Those are tags we should use for things like titles and author names. In theory there are also headings 3 through 12, which you can use if you like to signify less and less important headings. Um, you don't have to type all this exactly, but is everyone who wants to try out writing this HTML caught up?
+I think that's how that book goes. I could never really follow it. (I was a very stupid child.) In theory there are also headings 3 through 12, which you can use if you like to signify less and less important headings. Um, you don't have to type all this exactly, but is everyone who wants to try out writing this HTML caught up?
 
 Because next, I'm going to introduce something iconic and kind of weird: the anchor tag.
 
@@ -198,7 +198,9 @@ There are [a lot of different named colors](http://davidbau.com/colors/) in CSS,
 
 So yeah. CSS is used both to lay the page out and to change the visual style and appearance of things in it. Using the display property changes elements' layout modes, so for example, you can use `display: flex;` to create rows (or columns) and change how elements are aligned and spaced out inside them; and there are a bunch of words involved that you sadly just have to memorize. And that's probably enough CSS for one lifetime.
 
-JavaScript is completely different from either of the two previous languages. It is an honest-to-god real programming language in which you write statements that are executed in sequence according to logical expressions that you specify. There is no real limit to the kinds of programs you can write in JavaScript, but here, we're going to use it only for its original intended purpose - manipulating things on webpages. As a programming language, JavaScript uses variables - so we're going to start by storing an HTML element in a variable.
+JavaScript is completely different from either of the two previous languages. It is an honest-to-god real programming language in which you write statements that are executed in sequence according to logical expressions that you specify. One thing I should probably clarify: there is a programming language that is just called "Java"; it was very popular in the 90s and 2000s and was even used to make little interactive programs on web pages called Java applets; when JavaScript was created, it was named after Java with the promise that it could integrate with Java programs, then that never really happened, and today Java and JavaScript are two languages with absolutely no relationship between them. Oh well.
+
+Modern-day JavaScript has a lot of capabilities and you can write a lot of stuff with it, but here, we're going to use it only for its original intended purpose - manipulating things on webpages. As a programming language, JavaScript uses variables, so we're going to start by storing an HTML element in a variable.
 
 ```js
 const rowContainer = document.querySelector("#row-container");
@@ -256,3 +258,5 @@ If we have time, there's one more thing that you can try if you want. I want you
 These are the actual most basic HTML tags that form the backbone for every page. This gives you an organized way to combine HTML, CSS, and JavaScript into a single final file; it's just standard boilerplate-type stuff and you can just find a template like this online and copy-paste that into every new webpage that you ever create. JSFiddle was secretly putting our content into a template like this behind the scenes.
 
 Within these tags, you should insert the content we have created where the comments say to (yes, each language has its own different style of comments that let you leave human-readable notes that don't do anything.) Then, you can save the file as a .html file. Then you can open it in your web browser. And then you can send the file to anyone, upload the file to website hosting services like Neocities or Github Pages, or place the file in a special folder that Kent gives you to make it available on the public Internet. (That requires a seperate program to log into a certain account that Kent gives you - we can go over that after the lesson if you want.) Anyway: HTML. CSS. JavaScript. Content, presentation, interactivity. Combine them and utilize all of their different powers. That is how you create a webpage.
+
+Other things that could be added: pre tag, input tag (after covering javascript? text input for adding item to to-do list?), class selectors, asterisk selector e.g. to set the font for everything
