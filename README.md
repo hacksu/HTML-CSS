@@ -41,8 +41,7 @@ Basically, HTML is not a real programming language and there are rarely concrete
 ```html
 <h1>Green Eggs and Ham</h1>
 <h2>Dr. Seuss</h2>
-<p>I could not, would not, would not, boat.</p>
-<p>I will not, still not, shall not stoat.</p>
+<p>I could not, would not, would not, boat. I will not, still not, shall not stoat.</p>
 ```
 
 I think that's how that book goes. I could never really follow it. (I was a very stupid child.) In theory there are also headings 3 through 12, which you can use if you like to signify less and less important headings. Um, you don't have to type all this exactly, but is everyone who wants to try out writing this HTML caught up?
@@ -198,9 +197,11 @@ There are [a lot of different named colors](http://davidbau.com/colors/) in CSS,
 
 So yeah. CSS is used both to lay the page out and to change the visual style and appearance of things in it. Using the display property changes elements' layout modes, so for example, you can use `display: flex;` to create rows (or columns) and change how elements are aligned and spaced out inside them; and there are a bunch of words involved that you sadly just have to memorize. And that's probably enough CSS for one lifetime.
 
-JavaScript is completely different from either of the two previous languages. It is an honest-to-god real programming language in which you write statements that are executed in sequence according to logical expressions that you specify. One thing I should probably clarify: there is a programming language that is just called "Java"; it was very popular in the 90s and 2000s and was even used to make little interactive programs on web pages called Java applets; when JavaScript was created, it was named after Java with the promise that it could integrate with Java programs, then that never really happened, and today Java and JavaScript are two languages with absolutely no relationship between them. Oh well.
+JavaScript is completely different from either of the two previous languages. It is an honest-to-god real programming language in which you write sequences of commands that are executed in order and make decisions based on logic and stuff. One thing I should probably clarify: there is a programming language that is just called "Java"; it was very popular in the 90s and 2000s and was even used to make little interactive programs on web pages called Java applets; when JavaScript was created, it was named after Java with the promise that it could integrate with Java programs, then that never really happened, and today Java and JavaScript are two languages with absolutely no relationship between them. Oh well.
 
-Modern-day JavaScript has a lot of capabilities and you can write a lot of stuff with it, but here, we're going to use it only for its original intended purpose - manipulating things on webpages. As a programming language, JavaScript uses variables, so we're going to start by storing an HTML element in a variable.
+Modern-day JavaScript has a lot of capabilities and you can write a lot of stuff with it, but here, we're going to use it only for its original intended purpose - manipulating things on webpages. When used in the browser, JavaScript gives you access to what's called the DOM or Document Object Model. The DOM is basically a collection of objects linked together that represent everything on a web page and have code that they run in response to user actions. If you're wondering what an object is, well, it's a collection of named pieces of data and actions that use or modify that data. If you learn anything about programming or even just keep coming to our lessons, you're going to hear about objects a lot. So JavaScript code can access data representations of and perform actions on all of our HTML elements that we have in our page.
+
+Because it's a real programming language, JavaScript uses variables. So we're going to start by storing an HTML element in a variable.
 
 ```js
 const rowContainer = document.querySelector("#row-container");
