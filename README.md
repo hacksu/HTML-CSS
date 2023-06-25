@@ -31,7 +31,7 @@ So there you have it. This is called an HTML element: there's a start tag, conte
 To show how other tag names work, let's try another example. Instead of "p", we'll try "h2":
 
 ```html
-<h1>Green Eggs and Ham</h2>
+<h2>Green Eggs and Ham</h2>
 ```
 
 There are two ways in which the p tag and the h1 tag differ. One is the default style that web browsers will apply when it encounters them. the text in a "p" element, will create text in kind of a small font, spaced fairly far apart from the text in other elements; the "h1" tag, which stands for "header... 1", will have bigger text so it looks more important. That is the surface level difference between the two tags, but the thing is, that can be completely erased. In modern web development, a lot of people will actually remove all these default differences between tags completely so they can start with a clean slate and decide how things look on their own. The second, more important difference between types of tags is their semantic meaning, or to put it more succinctly, their vibes. "h1" should be used for headers; "p" tags should be used for paragraphy text. If you just want big text, you should not use a header tag; you should change the style of a "p" or other tag, which we'll cover how to do later, in order to preserve the vibes attached to each tag names.
