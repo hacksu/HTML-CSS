@@ -2,7 +2,34 @@
 
 We'll be using [JSFiddle](https://jsfiddle.net/) to give an introduction to [HyperText Markup Language](https://developer.mozilla.org/en-US/docs/Web/HTML), [Cascading Style Sheets](https://developer.mozilla.org/en-US/docs/Web/CSS), and [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
 
-To start, go to JSFiddle: https://jsfiddle.net/. You should see four boxes on the page, with the labels HTML, CSS, and JavaScript, and "Result." This layout allows you to write code in the first three boxes and see the result in the other one all at the same time without having to have multiple windows open or anything. When we write stuff in the first three boxes, we're going to need to click "Run" or press Control-S and then the result will show up by where it says "Result." By the way, you can click minimize on the thing that says "Console." And one more thing: I would go into the "Settings" and uncheck the two settings that start with "Auto", because otherwise you'll be dealing with some autofill/autocomplete stuff that I think is more trouble than it's worth unless you're really used to it.
+To begin with, you should know that a webpage looks like this:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+[CSS goes here]
+
+</style>
+</head>
+<body>
+
+[HTML goes here]
+
+<script>
+
+[JavaScript goes here]
+
+</script>
+</body>
+</html>
+```
+
+This is the basic template for an HTML page. If you take this template, paste it into Notepad, and save it, you'll get a web page. (The template should go in Discord.) (By the way, if you're using MacOS, you'll want to use TextEdit instead of Notepad, but make sure to [put it in plain text mode](https://www.ijunkie.com/wp-content/uploads/2017/06/02_select_format_make_plain_text.png) before saving.) But this new web page is not that interesting and it's kind of incorrect, because it just says things like "CSS goes here" where actual CSS should go. Our job today is basically to come up with some code that will replace those "goes here" labels, and to do that, we're actually going to use an online tool like JSFiddle, to have our code and the result all in one window and to make stuff easy to share, like I mentioned. 
+
+To start, go to JSFiddle: https://jsfiddle.net/. You should see four boxes on the page, with the labels HTML, CSS, and JavaScript, and "Result." This layout allows you to write code in the first three boxes and see the result in the other one all at the same time without having to have multiple windows open or anything. When we write stuff in the first three boxes, we're going to need to click "Run" or press Control-S and then the result will show up by where it says "Result." By the way, you can click minimize on the thing that says "Console." (Update, 2023: it looks like the console is minimized by default now?) And one more thing: I would go into the "Settings" and uncheck the two settings that start with "Auto", because otherwise you'll be dealing with some autofill/autocomplete stuff that I think is more trouble than it's worth unless you're really used to it.
 
 Okay: now we're set up, we can type code into these boxes, we just need to know what, in fact, we're typing, and where.
 
@@ -28,23 +55,44 @@ And, wait! I almost forgot. There's one more thing you probably want to have wit
 
 So there you have it. This is called an HTML element: there's a start tag, content, end tag, and the content shows up in the results square (for you too, right 🥺? You just have to hit "run").
 
-To show how other tag names work, let's try another example. Instead of "p", we'll try "h2":
+To show how other tag names work, let's try another example. Instead of "p", we'll try "h1":
 
 ```html
-<h2>Green Eggs and Ham</h2>
+<h1>Pet Turtles Like Music</h1>
 ```
 
-There are two ways in which the p tag and the h1 tag differ. One is the default style that web browsers will apply when it encounters them. the text in a "p" element, will create text in kind of a small font, spaced fairly far apart from the text in other elements; the "h1" tag, which stands for "header... 1", will have bigger text so it looks more important. That is the surface level difference between the two tags, but the thing is, that can be completely erased. In modern web development, a lot of people will actually remove all these default differences between tags completely so they can start with a clean slate and decide how things look on their own. The second, more important difference between types of tags is their semantic meaning, or to put it more succinctly, their vibes. "h1" should be used for headers; "p" tags should be used for paragraphy text. If you just want big text, you should not use a header tag; you should change the style of a "p" or other tag, which we'll cover how to do later, in order to preserve the vibes attached to each tag names.
-
-Basically, HTML is not a real programming language and there are rarely concrete, logical uses for things. It's mostly just vibes. Anyway, there's also an "h2" tag, which conveys text that is slightly less important than h1. And generally you put paragraphs below headers, so to complete the example.
+h1 stands for heading 1. It is the most powerful of all of the headings. There's a whole set of them, ranging form h1 all the way to h12. Let's try h2:
 
 ```html
-<h1>Green Eggs and Ham</h1>
-<h2>Dr. Seuss</h2>
-<p>I could not, would not, would not, boat. I will not, still not, shall not stoat.</p>
+<h1>Pet Turtles Like Music</h1>
+<h2>They Flip Their Legs In Waltz Tempo</h2>
 ```
 
-I think that's how that book goes. I could never really follow it. (I was a very stupid child.) In theory there are also headings 3 through 12, which you can use if you like to signify less and less important headings. Um, you don't have to type all this exactly, but is everyone who wants to try out writing this HTML caught up?
+And let's go the rest of the way to reproducing [this newspaper headline from 1932](https://yesterdaysprint.tumblr.com/post/175748913854/des-moines-tribune-iowa-january-19-1932) by adding an image. Image tags are a little different: they can be what is called self-closing. In other words, you only have to write one thing that serves as both a start and an end tag; this holds for basically all tags that don't have text content, which is a few of them. The basic format is like this:
+
+```html
+<img />
+```
+
+But we need to add some extra information to this HTML element to tell it what image to load and display. For this, we need an HTML attribute. An attribute looks a little like a string variable in other programming languages; it has a name:
+
+```html
+<img src />
+```
+
+And a value:
+
+```html
+<img src="https://hacksu.com/turtles.jpg" />
+```
+
+(Paste URL into Discord chat.) So attributes follow this format, name="value", and the name that you use for an attribute determines the effect it will have and what the value will be used for. In this case, the name "src" stands for source and means an image will be loaded from the URL given in the attribute's value. There's another useful attribute that we can use here, "width":
+
+```html
+<img src="https://hacksu.com/turtles.jpg" width="300" />
+```
+
+This will set the image's width to 300 pixels wide. Um, you don't have to type all this exactly, but is everyone who wants to try out writing this HTML caught up?
 
 Because next, I'm going to introduce something iconic and kind of weird: the anchor tag.
 
@@ -52,7 +100,7 @@ Because next, I'm going to introduce something iconic and kind of weird: the anc
 <a>Click me!</a>
 ```
 
-Well. You probably all know that that's not what it usually looks like. To manifest its true form, we need to add our first attribute. Attributes are placed after the tag name in the start tag and add some information to the HTML element.
+Well. You probably all know that that's not what it usually looks like. To manifest its true form, we need to add another attribute. When there's a start tag and an end tag, the attribute will always go in the start tag:
 
 ```html
 <a href="https://crouton.net/">Click me!</a>
@@ -64,14 +112,71 @@ So yeah. An anchor tag with an href attribute will create a link to another web 
 <a href="https://crouton.net/" target="_blank">Click me!</a>
 ```
 
-And now we have two examples of attributes. Attributes live in start tags, go after the tag name, and say `this="that"`. The first thing is called the attribute name and the second thing, in quotes, is called the attribute value. The "href" attribute gives the information "what page should this link link to" and the "target" attribute gives the information "this page should be opened in a new tab." We need that second thing when using JSFiddle because we don't want the page we're linking to to be trapped in the box, but it's also useful whenever you want a link to open a new tab so the viewer doesn't lose their place on the last page or whatever.
+So yeah, two new ones: The "href" attribute gives the information "what page should this link link to" and the "target" attribute gives the information "this page should be opened in a new tab." We need that second thing when using JSFiddle because we don't want the page we're linking to to be trapped in the box, but it's also useful whenever you want a link to open a new tab so the viewer doesn't lose their place on the last page or whatever.
 
 And you might, at this point, feel a little like you're looking at a bunch of gibberish, and that is basically correct. The thing about these web languages is that there's a bunch of stuff in them that made sense to someone at some point and now we're stuck with it because changing it would mean breaking compatability with a whole universe of old websites. This attribute name, "href," stands for "hypertext reference" because at some point someone thought that term would become a thing, and then, that term did not become a thing. However, we're stuck with it; it's used in the very first web page; and thus we just have to learn it. Same with the "_blank" value for "target"; the underscore is there because of history and if you leave it out weird stuff might start happening. It all looks a little strange but we must simply learn it and declare victory and move on.
 
-Now that we have the basics down, we can probably go through some more types of tags pretty quickly. Watch this, you can put HTML elements inside HTML elements:
+We've now learned approximately enough HTML to create the very first website. It looks like [this](http://info.cern.ch/hypertext/WWW/TheProject.html), it's from 1991, and it just had text. No turtle pics. But everybody's got to start somewhere.
+
+Now that we have the basics down, we can probably go through some more types of tags pretty quickly. Here's something that won't work: let's take [some ASCII art](https://www.asciiart.eu/nature) and put it in a `<p>` tag:
 
 ```html
-<p>Now, <strong>this</strong> is a story all about <em>how</em></p>
+<p>
+        __I__
+   .-'"  .  "'-.
+ .'  / . ' . \  '.
+/_.-..-..-..-..-._\ .---------------------------------.
+         #  _,,_   ( I hear it might rain people today )
+         #/`    `\ /'---------------------------------'
+         / / 6 6\ \
+         \/\  Y /\/       /\-/\
+         #/ `'U` \       /a a  \               _
+       , (  \   | \     =\ Y  =/-~~~~~~-,_____/ )
+       |\|\_/#  \_/       '^--'          ______/
+       \/'.  \  /'\         \           /
+        \    /=\  /         ||  |---'\  \
+   jgs  /____)/____)       (_(__|   ((__|
+</p>
+```
+
+The thing with HTML is that you're supposed to be allowed to put spaces wherever you want so that you can format your code properly. If you have many spaces, they get collapsed down to one space, and if you have multiple lines, they get treated as one, because normally when you write text like they did back in the day, normally you want text to flow and be wrapped at the edge of your browser and spaces are just used as indents in code. To change this, we can just use the HTML `<pre>` tag instead of `<p>`. Believe it or not, "pre" stands for "preserve whitespace."
+
+```html
+<pre>
+        __I__
+   .-'"  .  "'-.
+ .'  / . ' . \  '.
+/_.-..-..-..-..-._\ .---------------------------------.
+         #  _,,_   ( I hear it might rain people today )
+         #/`    `\ /'---------------------------------'
+         / / 6 6\ \
+         \/\  Y /\/       /\-/\
+         #/ `'U` \       /a a  \               _
+       , (  \   | \     =\ Y  =/-~~~~~~-,_____/ )
+       |\|\_/#  \_/       '^--'          ______/
+       \/'.  \  /'\         \           /
+        \    /=\  /         ||  |---'\  \
+   jgs  /____)/____)       (_(__|   ((__|
+</pre>
+```
+
+Now we have some respectable art. Outside of `<pre>` tags, you can still have newlines, you just have to use the `<br />` tag:
+
+If we want an actual line break that will show up for real in the content, one thing that we can do use the \<br /> tag:
+
+```html
+<p>
+  You say goodbye <br />
+  and I say hello
+</p>
+```
+
+`<br />` stands for line break and, kind of like `<img />`, it is a self-closing tag, meaning that you only need one instead of having a start and an end tag.
+
+Watch this, you can put HTML elements inside HTML elements:
+
+```html
+<p>meow <em>meow</em> <strong>meow</strong>/p>
 ```
 
 Back in the day, they used to use tags just called "b" and "i" for a similar effect but those tags are old and everyone who used them has died by now, and if you invoke them, you will have an encounter with ghosts.
@@ -91,28 +196,11 @@ You can add "summary" tags inside them to change the initially visible text:
 </details>
 ```
 
-Putting tags on different lines like that is allowed. HTML wants you to be able to format your code with spaces and newlines without changing how the content is displayed, so we can actually put new lines practically wherever we want. If we want an actual line break that will show up for real in the content, one thing that we can do use the \<br /> tag:
-
-```html
-<p>
-  You say goodbye <br />
-  and I say hello
-</p>
-```
-
-See, if I remove that, there's no line break in the result, even though there is in the code. We need the \<br />. You may notice something weird about that particular tag: since there's no real content that it can encompass, there's no need for it to have a start and an end tag. Instead, it's what's referred to as self-closing: it ends at the same place it begins. (Most people will use that end-tag-style slash to indicate this, but you technically don't even need that.)
-
-And here's another very popular self-closing tag:
-
-```html
-<img src="https://crouton.net/crouton.png" />
-```
-
-Images! You know them, you love them.
-
 So, that was a lot of tags. Let's look over the chaos we have created.
 
-All of those tags have some kind of specific purpose, indicated by their name. But there's one more tag we're going to look at that's extremely popular because it has no real specific purpose. This tag is called \<div>, which stands for content division, and it's basically the clear plastic tupperware of tags: you just put stuff in it. The idea is that you use it to divide content into sections, usually so that you can impose some kind of layout. For example, we can use them to group some elements into columns:
+The `<details>` tag is interesting because it's the first interactive one we've used. Even something as simple as this can be used to interesting effect if you get into it. Check out this poem, ["soft corruptor"](https://media.cordite.org.au/soft-corrupter/); if you view the source of the page, you'll see that it's entirely made out of details and summary tags.
+
+Okay, so all of the tags we've looked at so far have some kind of specific purpose, indicated by their name. But there's one more tag we're going to look at that's extremely popular because it has no real specific purpose. This tag is called \<div>, which stands for content division, and it's basically the clear plastic tupperware of tags: you just put stuff in it. The idea is that you use it to divide content into sections, usually so that you can impose some kind of layout. For example, we can use them to group some elements into columns:
 
 ```html
 <div>
@@ -199,65 +287,34 @@ So yeah. CSS is used both to lay the page out and to change the visual style and
 
 JavaScript is completely different from either of the two previous languages. It is an honest-to-god real programming language in which you write sequences of commands that are executed in order and make decisions based on logic and stuff. One thing I should probably clarify: there is a programming language that is just called "Java"; it was very popular in the 90s and 2000s and was even used to make little interactive programs on web pages called Java applets; when JavaScript was created, it was named after Java with the promise that it could integrate with Java programs, then that never really happened, and today Java and JavaScript are two languages with absolutely no relationship between them. Oh well.
 
-Modern-day JavaScript has a lot of capabilities and you can write a lot of stuff with it, but here, we're going to use it only for its original intended purpose - manipulating things on webpages. When used in the browser, JavaScript gives you access to what's called the DOM or Document Object Model. The DOM is basically a collection of objects linked together that represent everything on a web page and have code that they run in response to user actions. If you're wondering what an object is, well, it's a collection of named pieces of data and actions that use or modify that data. If you learn anything about programming or even just keep coming to our lessons, you're going to hear about objects a lot. So JavaScript code can access data representations of and perform actions on all of our HTML elements that we have in our page.
-
-Because it's a real programming language, JavaScript uses variables. So we're going to start by storing an HTML element in a variable.
+JavaScript has functions. The most basic one that we can test out is called `alert`:
 
 ```js
-const rowContainer = document.querySelector("#row-container");
+alert("hello");
 ```
 
-This is called an assignment statement, and basically what it does is store the thing on the right side of the equals sign under the name that's on the left side of the equals sign. The thing on the left side of the equals sign is called a variable. You might say that there are, in fact, two things on the left side of the equals sign, but the first thing, "const", is more like an annotation than a name: it just indicates that we're creating a brand new variable, which I am calling "rowContainer", and that that variable is going to be constant - I don't want to be able to change what's stored in it later. The thing on the right side of the equals sign is a function call that grabs the HTML element on the page that matches the selector "#row-container". You've seen this selector before. We used it to select a div and turn it into a row of things. It turns out you can use these guys in JavaScript too. So, in summary, we are storing the HTML element with the ID attribute "row-container" in the variable `rowContainer`.
-
-The next thing we want to do is define an action that will edit or alter the items that we have in our list. We are going to do that by creating what is called an event listener. An event listener is a type of function, which is a piece of code that can be run over and over again. You can define functions a few ways in JavaScript, but the most basic way is to write the following: the word "function"; the name of the function; a parenthesized list of input variables for the function; and then the function's executable code inside curly braces.
+It also has variables. In JavaScript, the modern recommended practice is to create variables with the keyword "const". You never have to specify the type of a variable when you create it, like, you don't have to say whether it's a string or an int or a double or whatever, but you do have to specify whether you want to change it later. For some reason. Unless you do need to change a variable later, you should use the word "const" to create it.
 
 ```js
-function crossOut(click) {
-  if (click.target.tagName == "P")
-	  click.target.style.textDecoration = "line-through";
-}
+const myName = "Mitch";
+alert("hello " + myName);
 ```
 
-An event listener is triggered by an event, and an event is a thing that a user does, such as: a click. So the input to our function is a representation of a click that just happened, and thus I am using the word "click" as the name I want it to have. This particular representation is an object, which works sort of like a variable with more variables inside it. We can reach the variables that are inside it by using the dot operator. We can access the event target, which is the HTML element that got clicked. We can access the target's tag name, which will be in all caps for historical reasons, and we can check to see if it's a "p" element that we might want to cross out. And then we can access the style of the target, which is the set of CSS rules that determine how it's displayed, and then the CSS property called "textDecoration", and then we can give it the value "line-through". Unfortunately, all of these variable names except "click" are a built-in part of the browser's internal representation of events and HTML elements, and they just have to be learned. They are part of a system that kinda-sorta makes sense, but for now, here are some names of things; string them together.
-
-Finally, we are going to attach our event listener to the element we selected earlier by setting the onClick variable that exists inside it.
+That's pretty predictable, so instead of setting the name directly, let's use another function called "prompt":
 
 ```js
-rowContainer.onclick = crossOut;
+const myName = prompt("what is ur name?");
+alert("hello " + myName);
 ```
 
-Once we have done that, every actual real life click inside our row of lists will trigger our event listener function to run. This function will edit one of the CSS style rules that apply to our HTML element. So, look: when you click on one of our list items, it gets crossed out.
+And finally, let's explore the true power of JavaScript, the reason that everyone uses it: it can modify the contents of a page. This is a little bit tricky because JavaScript can modify HTML, but it only does so after the HTML is loaded normally from code; by the time the JavaScript runs, the HTML has already been used to create the page, and changes to the page won't affect the original HTML. So, in other words, we aren't going to modify the code with JavaScript; just the page that it created; so don't look over at the HTML in the editor to see your changes. But:
 
-Now, you may notice that nothing in our HTML or CSS text boxes changes when this event listener executes. Our HTML and CSS serve to initially set up our webpage; once JavaScript starts executing, all bets are off, and the content of the page can diverge wildly from how it was originally specified. You can use the well-known "Inspect Element" tool that browsers provide to get a look at how the HTML and CSS would look if they kept up to date with the changes that JavaScript makes, although it might take a while to get used to all the stuff that that tool shows you.
-
-[Final JSFiddle](https://jsfiddle.net/ytms1g6u/)
-
-If we have time, there's one more thing that you can try if you want. I want you to open up a new blank plain text file in an editor like Notepad, TextEdit, or nano. Copy down or copy and paste the following HTML tags, I'll put them in the Discord:
-
-```html
-<html>
-<head>
-<style>
-  /* Put CSS right below this */
-
-</style>
-</head>
-
-<body>
-<!-- Put HTML right below this -->
-
-<script>
-// Put JavaScript right below this
-
-</script>
-
-</body>
-
-</html>
+```js
+const myName = prompt("what is ur name?");
+alert("hello " + myName);
+document.write(myName+" is here :D");
 ```
 
-These are the actual most basic HTML tags that form the backbone for every page. This gives you an organized way to combine HTML, CSS, and JavaScript into a single final file; it's just standard boilerplate-type stuff and you can just find a template like this online and copy-paste that into every new webpage that you ever create. JSFiddle was secretly putting our content into a template like this behind the scenes.
-
-Within these tags, you should insert the content we have created where the comments say to (yes, each language has its own different style of comments that let you leave human-readable notes that don't do anything.) Then, you can save the file as a .html file. Then you can open it in your web browser. And then you can send the file to anyone, upload the file to website hosting services like Neocities or Github Pages, or place the file in a special folder that Kent gives you to make it available on the public Internet. (That requires a seperate program to log into a certain account that Kent gives you - we can go over that after the lesson if you want.) Anyway: HTML. CSS. JavaScript. Content, presentation, interactivity. Combine them and utilize all of their different powers. That is how you create a webpage.
+Note: Kent web public_html folder
 
 Other things that could be added: pre tag, input tag (after covering javascript? text input for adding item to to-do list?), class selectors, asterisk selector e.g. to set the font for everything
