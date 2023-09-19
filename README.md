@@ -33,7 +33,7 @@ To start, go to JSFiddle: https://jsfiddle.net/. You should see four boxes on th
 
 Okay: now we're set up, we can type code into these boxes, we just need to know what, in fact, we're typing, and where.
 
-HTML, CSS, and JavaScript are the programming languages that web browsers understand. For this reason, they are very important. There are a lot of tools that you can use to design web pages without directly writing in these languages yourself, but those tools will all need to produce HTML, CSS, and JavaScript at some point, because a browser needs to see those before it can render a real live web page. They are the fundamental building blocks of the World Wide Web. Of these, HTML is the oldest and most fundamentalest; the [very first web page](http://info.cern.ch/hypertext/WWW/TheProject.html) was written in it in 1991. It is what you use to put stuff on your page. Web pages need stuff, so that's the first box we're going to write in.
+HTML, CSS, and JavaScript are the programming languages that web browsers understand. For this reason, they are very important. There are a lot of tools that you can use to design web pages without directly writing in these languages yourself, but those tools will all need to produce HTML, CSS, and JavaScript at some point, because a browser needs to see those before it can render a real live web page. They are the fundamental building blocks of the World Wide Web. Of these, HTML is the oldest and most fundamentalest; it is what you use to put stuff on your page. Web pages need stuff, so that's the first box we're going to write in.
 
 So, HTML is a fundamentalest building block of the web, and the fundamental building blocks of HTML are called "tags." The first kind of tag is called a start tag, and it looks like this; there is a tag name (which is in this case just the letter "p") enclosed in angle brackets, which are what those greater than/less than signs are called when they are being used to enclose things.
 
@@ -109,7 +109,7 @@ Well. You probably all know that that's not what it usually looks like. To manif
 So yeah. An anchor tag with an href attribute will create a link to another web page so you can go there if you click it. Except, wait, ours is kind of weird right now, because the new page will open inside the little JSFiddle box. Try this:
 
 ```html
-<a href="https://crouton.net/" target="_blank">Click me!</a>
+<a href="https://drawing.garden" target="_blank">Click me!</a>
 ```
 
 So yeah, two new ones: The "href" attribute gives the information "what page should this link link to" and the "target" attribute gives the information "this page should be opened in a new tab." We need that second thing when using JSFiddle because we don't want the page we're linking to to be trapped in the box, but it's also useful whenever you want a link to open a new tab so the viewer doesn't lose their place on the last page or whatever.
@@ -191,7 +191,7 @@ You can add "summary" tags inside them to change the initially visible text:
 
 ```html
 <details>
-  <summary>Click here to say howdy</summary>
+  <summary>Click here if you want to say howdy</summary>
   🤠
 </details>
 ```
@@ -315,6 +315,8 @@ alert("hello " + myName);
 document.write(myName+" is here :D");
 ```
 
-Note: Kent web public_html folder
+So yeah. That's a basic introduction to HTML, CSS, and JavaScript. No one has ever quite mastered any of them, so we're safe to leave off for now.
+
+Note: Kent web public_html folder. [Off-leash cursor park](https://candiedreptile.club/bloglet/park_landing.html).
 
 Other things that could be added: pre tag, input tag (after covering javascript? text input for adding item to to-do list?), class selectors, asterisk selector e.g. to set the font for everything
