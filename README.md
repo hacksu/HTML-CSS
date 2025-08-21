@@ -1,6 +1,6 @@
 # HTML, CSS, and JavaScript
 
-We'll be using [JSFiddle](https://jsfiddle.net/) to give an introduction to [HyperText Markup Language](https://developer.mozilla.org/en-US/docs/Web/HTML), [Cascading Style Sheets](https://developer.mozilla.org/en-US/docs/Web/CSS), and [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
+We'll be creating local HTML files to give an introduction to [HyperText Markup Language](https://developer.mozilla.org/en-US/docs/Web/HTML), [Cascading Style Sheets](https://developer.mozilla.org/en-US/docs/Web/CSS), and [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
 
 To begin with, you should know that a webpage looks like this:
 
@@ -27,13 +27,25 @@ To begin with, you should know that a webpage looks like this:
 </html>
 ```
 
-This is the basic template for an HTML page. If you take this template, paste it into Notepad, and save it, you'll get a web page. (The template should go in Discord.) (By the way, if you're using MacOS, you'll want to use TextEdit instead of Notepad, but make sure to [put it in plain text mode](https://www.ijunkie.com/wp-content/uploads/2017/06/02_select_format_make_plain_text.png) before saving.) But this new web page is not that interesting and it's kind of incorrect, because it just says things like "CSS goes here" where actual CSS should go. Our job today is basically to come up with some code that will replace those "goes here" labels, and to do that, we're actually going to use an online tool like JSFiddle, to have our code and the result all in one window and to make stuff easy to share, like I mentioned. 
+This is the basic template for an HTML page. You can copy this template, paste it into a text editor (like Notepad on Windows, TextEdit on macOS in plain text mode, or VS Code), save it with a `.html` extension (like `my-webpage.html`), and then open it in your web browser to see your webpage!
 
-To start, go to JSFiddle: https://jsfiddle.net/. You should see four boxes on the page, with the labels HTML, CSS, and JavaScript, and "Result." This layout allows you to write code in the first three boxes and see the result in the other one all at the same time without having to have multiple windows open or anything. When we write stuff in the first three boxes, we're going to need to click "Run" or press Control-S and then the result will show up by where it says "Result." By the way, you can click minimize on the thing that says "Console." (Update, 2023: it looks like the console is minimized by default now?) And one more thing: I would go into the "Settings" and uncheck the two settings that start with "Auto", because otherwise you'll be dealing with some autofill/autocomplete stuff that I think is more trouble than it's worth unless you're really used to it.
+But this template is not that interesting and it's kind of incorrect, because it just says things like "CSS goes here" where actual CSS should go. Our job today is to come up with some code that will replace those "goes here" labels with real HTML, CSS, and JavaScript.
 
-Okay: now we're set up, we can type code into these boxes, we just need to know what, in fact, we're typing, and where.
+## Getting Started
 
-HTML, CSS, and JavaScript are the programming languages that web browsers understand. For this reason, they are very important. There are a lot of tools that you can use to design web pages without directly writing in these languages yourself, but those tools will all need to produce HTML, CSS, and JavaScript at some point, because a browser needs to see those before it can render a real live web page. They are the fundamental building blocks of the World Wide Web. Of these, HTML is the oldest and most fundamentalest; it is what you use to put stuff on your page. Web pages need stuff, so that's the first box we're going to write in.
+1. **Create a new HTML file**: Open your text editor and create a new file
+2. **Copy the basic template**: Use the template above as your starting point
+3. **Save the file**: Save it with a `.html` extension (like `practice.html`)
+4. **Open in browser**: Double-click the file to open it in your default web browser, or right-click and choose "Open with" to select a specific browser
+5. **Edit and refresh**: Make changes to your HTML file, save it, then refresh the browser to see your changes
+
+Let's start by looking at the example file `result.html` in this repository to see what a complete webpage looks like, then we'll learn how to build it step by step.
+
+Now we're set up to write code directly in HTML files and see the results in our browser. We just need to know what, in fact, we're typing, and where.
+
+HTML, CSS, and JavaScript are the programming languages that web browsers understand. For this reason, they are very important. There are a lot of tools that you can use to design web pages without directly writing in these languages yourself, but those tools will all need to produce HTML, CSS, and JavaScript at some point, because a browser needs to see those before it can render a real live web page. They are the fundamental building blocks of the World Wide Web. Of these, HTML is the oldest and most fundamentalest; it is what you use to put stuff on your page. Web pages need stuff, so let's start by putting some content in the `<body>` section of our HTML template.
+
+## HTML: Adding Content to Your Page
 
 So, HTML is a fundamentalest building block of the web, and the fundamental building blocks of HTML are called "tags." The first kind of tag is called a start tag, and it looks like this; there is a tag name (which is in this case just the letter "p") enclosed in angle brackets, which are what those greater than/less than signs are called when they are being used to enclose things.
 
@@ -53,7 +65,14 @@ And, wait! I almost forgot. There's one more thing you probably want to have wit
 <p>Hello, World!</p>
 ```
 
-So there you have it. This is called an HTML element: there's a start tag, content, end tag, and the content shows up in the results square (for you too, right 🥺? You just have to hit "run").
+So there you have it. This is called an HTML element: there's a start tag, content, end tag, and the content shows up in your browser when you save the file and refresh the page.
+
+**Try it yourself**: Replace the `[HTML goes here]` in your template with:
+```html
+<p>Hello, World!</p>
+```
+
+Save your file and refresh your browser to see the result!
 
 To show how other tag names work, let's try another example. Instead of "p", we'll try "h1":
 
@@ -83,16 +102,16 @@ But we need to add some extra information to this HTML element to tell it what i
 And a value:
 
 ```html
-<img src="https://hacksu.com/turtles.jpg" />
+<img src="https://crouton.net/crouton.png" />
 ```
 
-(Paste URL into Discord chat.) So attributes follow this format, name="value", and the name that you use for an attribute determines the effect it will have and what the value will be used for. In this case, the name "src" stands for source and means an image will be loaded from the URL given in the attribute's value. There's another useful attribute that we can use here, "width":
+So attributes follow this format, name="value", and the name that you use for an attribute determines the effect it will have and what the value will be used for. In this case, the name "src" stands for source and means an image will be loaded from the URL given in the attribute's value. There's another useful attribute that we can use here, "width":
 
 ```html
-<img src="https://hacksu.com/turtles.jpg" width="300" />
+<img src="https://crouton.net/crouton.png" width="300" />
 ```
 
-This will set the image's width to 300 pixels wide. Um, you don't have to type all this exactly, but is everyone who wants to try out writing this HTML caught up?
+This will set the image's width to 300 pixels wide. Try adding this to your HTML file between some paragraphs and see what happens!
 
 Because next, I'm going to introduce something iconic and kind of weird: the anchor tag.
 
@@ -106,13 +125,12 @@ Well. You probably all know that that's not what it usually looks like. To manif
 <a href="https://crouton.net/">Click me!</a>
 ```
 
-So yeah. An anchor tag with an href attribute will create a link to another web page so you can go there if you click it. Except, wait, ours is kind of weird right now, because the new page will open inside the little JSFiddle box. Try this:
+So yeah. An anchor tag with an href attribute will create a link to another web page so you can go there if you click it. The "href" attribute gives the information "what page should this link link to" and the "target" attribute gives the information "this page should be opened in a new tab." The `target="_blank"` attribute is useful whenever you want a link to open a new tab so the viewer doesn't lose their place on your page.
 
+**Try it**: Add this link to your HTML file and test it in your browser:
 ```html
 <a href="https://drawing.garden" target="_blank">Click me!</a>
 ```
-
-So yeah, two new ones: The "href" attribute gives the information "what page should this link link to" and the "target" attribute gives the information "this page should be opened in a new tab." We need that second thing when using JSFiddle because we don't want the page we're linking to to be trapped in the box, but it's also useful whenever you want a link to open a new tab so the viewer doesn't lose their place on the last page or whatever.
 
 And you might, at this point, feel a little like you're looking at a bunch of gibberish, and that is basically correct. The thing about these web languages is that there's a bunch of stuff in them that made sense to someone at some point and now we're stuck with it because changing it would mean breaking compatability with a whole universe of old websites. This attribute name, "href," stands for "hypertext reference" because at some point someone thought that term would become a thing, and then, that term did not become a thing. However, we're stuck with it; it's used in the very first web page; and thus we just have to learn it. Same with the "_blank" value for "target"; the underscore is there because of history and if you leave it out weird stuff might start happening. It all looks a little strange but we must simply learn it and declare victory and move on.
 
@@ -234,7 +252,7 @@ So that's great. But these "columns" are just above and below each other, so the
 </div>
 ```
 
-Now, brace yourselves, because we're going to need to attempt to use CSS to alter the page layout for the next step. Click over to the CSS box in JSFiddle (finally, right?) and type this:
+Now, brace yourselves, because we're going to need to attempt to use CSS to alter the page layout for the next step. In your HTML template, replace the `[CSS goes here]` section with this:
 
 ```css
 #row-container {
@@ -246,7 +264,7 @@ Let's break this code down. The first thing we typed is a CSS selector, which sp
 
 There are many, many properties in CSS, each with their own set of possible values, but this property, the display property, is very important; basically, it sets the layout mode that will be applied to elements that we're selecting. This is kind of like the anchoring mode that you can set for images in Microsoft Word, to control whether text goes around them or above and below them. When you set the layout mode of a div to "flex", its becomes a row or column (by default a row) in which you can control the alignment and spacing of elements in a fine-grained way.
 
-Our div columns are still kind of ugly because they're smashed together. Let's fix that with a few more CSS properties.
+Our div columns are still kind of ugly because they're smashed together. Let's fix that with a few more CSS properties. Update your CSS to include these additional styles:
 
 ```css
 #row-container {
@@ -258,11 +276,17 @@ Our div columns are still kind of ugly because they're smashed together. Let's f
 }
 ```
 
-These properties are relatively straightforward. The second one stretches our row to take the whole width of the page. The third spaces out the elements in the row evenly; without that, they'll default to sitting at the beginning of the row, no matter how wide it is. Finally, I want to center the text inside the columns and change the font because I think that looks better.
+Save your HTML file and refresh your browser to see the changes!
 
-Now we're experienced with CSS rules. This is most of what you do with CSS; you put a selector to indicate which elements you're doing stuff to, and then you say what stuff you want to do to them, like changing the text alignment. I should probably give everyone a second to catch up with these layout rules that we're using.
+These properties are relatively straightforward. The second one stretches our row to take the whole width of the page. The third spaces out the elements in the row evenly; without that, they'll default to sitting at the beginning of the row, no matter how wide it is. Finally, we center the text inside the columns and change the font because it looks better.
+
+## CSS Selectors and Styling
+
+Now we're experienced with CSS rules. This is most of what you do with CSS; you put a selector to indicate which elements you're doing stuff to, and then you say what stuff you want to do to them, like changing the text alignment.
 
 And now that we're experienced with rules, let's try using some different selectors. Remember, those are the things in front of the curly braces that determine which elements we're controlling. In our columns, which are created by these divs, we have h2 elements for our list headers and p elements for our items. Let's try selecting just the p elements that are inside the columns. We can do this by just putting `#row-container p` as our selector: when you separate two selectors with a space, you first take all the elements that are inside the one indicated by the first selector, and then narrow it down to the elements that match the second selector. (Tag names work as selectors all by themselves.)
+
+Add this CSS rule to your stylesheet:
 
 ```css
 #row-container p {
@@ -271,7 +295,9 @@ And now that we're experienced with rules, let's try using some different select
 }
 ```
 
-Notice that the other paragraphs that we have up above haven't changed; only the ones inside divs did. (We could select all the paragraphs everywhere by just using "p" as a selector, but I want to let them rest.) One more really fun selector is the "hover" one, which only applies to elements when your mouse is over them.
+Notice that if you have other paragraphs outside the row container, they haven't changed; only the ones inside the row container did. (We could select all the paragraphs everywhere by just using "p" as a selector.) 
+
+One more really fun selector is the "hover" one, which only applies to elements when your mouse is over them. Add this rule and try hovering over your row container:
 
 ```css
 #row-container:hover {
@@ -285,13 +311,17 @@ There are [a lot of different named colors](http://davidbau.com/colors/) in CSS,
 
 So yeah. CSS is used both to lay the page out and to change the visual style and appearance of things in it. Using the display property changes elements' layout modes, so for example, you can use `display: flex;` to create rows (or columns) and change how elements are aligned and spaced out inside them; and there are a bunch of words involved that you sadly just have to memorize. And that's probably enough CSS for one lifetime.
 
+## JavaScript: Making Pages Interactive
+
 JavaScript is completely different from either of the two previous languages. It is an honest-to-god real programming language in which you write sequences of commands that are executed in order and make decisions based on logic and stuff. One thing I should probably clarify: there is a programming language that is just called "Java"; it was very popular in the 90s and 2000s and was even used to make little interactive programs on web pages called Java applets; when JavaScript was created, it was named after Java with the promise that it could integrate with Java programs, then that never really happened, and today Java and JavaScript are two languages with absolutely no relationship between them. Oh well.
 
-JavaScript has functions. The most basic one that we can test out is called `alert`:
+JavaScript has functions. The most basic one that we can test out is called `alert`. Replace the `[JavaScript goes here]` section in your HTML template with:
 
 ```js
 alert("hello");
 ```
+
+Save and refresh your browser - you should see a popup!
 
 It also has variables. In JavaScript, the modern recommended practice is to create variables with the keyword "const". You never have to specify the type of a variable when you create it, like, you don't have to say whether it's a string or an int or a double or whatever, but you do have to specify whether you want to change it later. For some reason. Unless you do need to change a variable later, you should use the word "const" to create it.
 
@@ -300,14 +330,14 @@ const myName = "Mitch";
 alert("hello " + myName);
 ```
 
-That's pretty predictable, so instead of setting the name directly, let's use another function called "prompt":
+That's pretty predictable, so instead of setting the name directly, let's use another function called "prompt". Update your JavaScript to:
 
 ```js
 const myName = prompt("what is ur name?");
 alert("hello " + myName);
 ```
 
-And finally, let's explore the true power of JavaScript, the reason that everyone uses it: it can modify the contents of a page. This is a little bit tricky because JavaScript can modify HTML, but it only does so after the HTML is loaded normally from code; by the time the JavaScript runs, the HTML has already been used to create the page, and changes to the page won't affect the original HTML. So, in other words, we aren't going to modify the code with JavaScript; just the page that it created; so don't look over at the HTML in the editor to see your changes. But:
+And finally, let's explore the true power of JavaScript, the reason that everyone uses it: it can modify the contents of a page. This is a little bit tricky because JavaScript can modify HTML, but it only does so after the HTML is loaded normally from code; by the time the JavaScript runs, the HTML has already been used to create the page, and changes to the page won't affect the original HTML code. So, in other words, we aren't going to modify the HTML code with JavaScript; just the page that it created; so don't look at your HTML code to see the changes - look at the browser! Try this:
 
 ```js
 const myName = prompt("what is ur name?");
@@ -315,8 +345,165 @@ alert("hello " + myName);
 document.write(myName+" is here :D");
 ```
 
+Save your file and refresh the browser to see JavaScript modify your page in real-time!
+
 So yeah. That's a basic introduction to HTML, CSS, and JavaScript. No one has ever quite mastered any of them, so we're safe to leave off for now.
 
-Note: Kent web public_html folder. [Off-leash cursor park](https://candiedreptile.club/bloglet/park_landing.html).
+## Complete Example
+
+Check out the `result.html` file in this repository to see a complete working example that demonstrates all these concepts together! You can open it in your browser to see a fully functional webpage with:
+
+- HTML content and structure
+- CSS styling and layout
+- Interactive JavaScript functionality
+
+## Tips for Local Development
+
+- **Save frequently**: Always save your HTML file before refreshing the browser
+- **Use a good text editor**: VS Code, Sublime Text, or even Notepad++ work well
+- **Open Developer Tools**: Press F12 in most browsers to see errors and inspect your code
+- **Test in multiple browsers**: Different browsers may display things slightly differently
+
+## Next Steps
+
+Try modifying the `result.html` file to:
+- Change the colors and fonts
+- Add more content
+- Experiment with different layouts
+- Add more interactive JavaScript features
+
+---
+
+# Part 2: Making Your Website Live on the Internet
+
+Now that you've created a website locally, you probably want to share it with the world! Here are two excellent options for hosting your HTML, CSS, and JavaScript files for free.
+
+## Option 1: Vercel (Recommended for Beginners)
+
+[Vercel](https://vercel.com/) is a modern hosting platform that's perfect for static websites. It's completely free for personal projects and incredibly easy to use.
+
+### Getting Started with Vercel
+
+1. **Create a Vercel account**: Go to [vercel.com](https://vercel.com/) and sign up with your GitHub account (recommended) or email
+
+2. **Prepare your files**: Make sure all your HTML, CSS, and JavaScript files are in a single folder on your computer
+
+3. **Deploy your site**:
+   - Click "New Project" in your Vercel dashboard
+   - Choose "Import Git Repository" if your code is on GitHub, or
+   - Drag and drop your folder directly onto the Vercel website
+   - Vercel will automatically deploy your site and give you a live URL!
+
+4. **Your site is live**: Vercel will provide you with a URL like `your-project-name.vercel.app` that you can share with anyone
+
+### Benefits of Vercel:
+- ✅ **Free forever** for personal projects
+- ✅ **Automatic HTTPS** (secure connections)
+- ✅ **Global CDN** (fast loading worldwide)
+- ✅ **Custom domains** (you can use your own domain name)
+- ✅ **Automatic deployments** (if connected to GitHub, updates when you push code)
+
+## Option 2: University public_html Folder
+
+If you're a student at Kent State or another university, you likely have access to a `public_html` folder on the university servers.
+
+### Using public_html at Kent State
+
+1. **Access your home directory**: 
+   - Connect to the university servers wasp, hornet, or scorpion the same way you would for cs2 or cs3
+   - Look for a folder called `public_html` in your home directory
+
+2. **Upload your files**:
+   - Copy your HTML, CSS, and JavaScript files into the `public_html` folder
+   - Make sure your main page is named `index.html`
+
+3. **Access your site**:
+   - Your website will be available at a URL like: `https://www.cs.kent.edu/~yourusername/`
+   - Replace `yourusername` with your actual university username
+
+### Benefits of public_html:
+- ✅ **Free** (included with your student account)
+- ✅ **Educational** (good for learning about traditional web hosting)
+- ✅ **University resources** (often has good bandwidth and uptime)
+
+## Which Option Should You Choose?
+
+**Choose Vercel if:**
+- You want the easiest setup process
+- You plan to continue web development after graduation
+- You want modern features like automatic deployments
+- You want to learn industry-standard tools
+- You want to learn more common web frameworks, like react, svelte, and vue
+
+**Choose public_html if:**
+- You want to learn traditional web hosting
+- You're comfortable with file transfer protocols (FTP/SFTP)
+- You want to keep everything within university systems
+- You're interested in understanding how web servers work
+
+## Making Your Site Even Better
+
+Once your site is live, consider these improvements:
+
+### Performance
+- **Optimize images**: Use tools like [TinyPNG](https://tinypng.com/) to compress images
+- **Minify CSS/JS**: Remove unnecessary spaces and comments for faster loading
+
+### Accessibility
+- Add `alt` attributes to all images
+- Use proper heading hierarchy (h1, h2, h3...)
+- Ensure good color contrast
+
+### Example improved HTML template:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <meta name="description" content="A brief description of your page">
+    <style>
+        /* CSS goes here */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Website</h1>
+    </header>
+    
+    <main>
+        <!-- Main content goes here -->
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Your Name</p>
+    </footer>
+
+    <script>
+        // JavaScript goes here
+    </script>
+</body>
+</html>
+```
+
+## Troubleshooting Common Issues
+
+**Site not loading?**
+- Check that your main file is named `index.html`
+- Verify all file paths are correct (case-sensitive on most servers)
+- Make sure images and CSS files are uploaded to the correct locations
+
+**Styling not working?**
+- Check that CSS file paths are correct
+- Verify there are no typos in your CSS selectors
+- Use browser developer tools (F12) to debug
+
+**JavaScript not working?**
+- Check the browser console (F12) for error messages
+- Verify all script tags are properly closed
+- Make sure JavaScript is placed before the closing `</body>` tag
+
+Now you have the power to create websites and share them with the world! 🌐
 
 Other things that could be added: pre tag, input tag (after covering javascript? text input for adding item to to-do list?), class selectors, asterisk selector e.g. to set the font for everything
