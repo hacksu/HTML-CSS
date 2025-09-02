@@ -318,36 +318,6 @@ The portfolio template uses everything you've learned and more:
 
 This portfolio will serve as both a learning project and a professional asset you can use to showcase your skills to potential employers or clients!
 
----
-
-# Part 3: Hosting Your Website
-
-It also has variables. In JavaScript, the modern recommended practice is to create variables with the keyword "const". You never have to specify the type of a variable when you create it, like, you don't have to say whether it's a string or an int or a double or whatever, but you do have to specify whether you want to change it later. For some reason. Unless you do need to change a variable later, you should use the word "const" to create it.
-
-```js
-const myName = "Mitch";
-alert("hello " + myName);
-```
-
-That's pretty predictable, so instead of setting the name directly, let's use another function called "prompt". Update your JavaScript to:
-
-```js
-const myName = prompt("what is ur name?");
-alert("hello " + myName);
-```
-
-And finally, let's explore the true power of JavaScript, the reason that everyone uses it: it can modify the contents of a page. This is a little bit tricky because JavaScript can modify HTML, but it only does so after the HTML is loaded normally from code; by the time the JavaScript runs, the HTML has already been used to create the page, and changes to the page won't affect the original HTML code. So, in other words, we aren't going to modify the HTML code with JavaScript; just the page that it created; so don't look at your HTML code to see the changes - look at the browser! Try this:
-
-```js
-const myName = prompt("what is ur name?");
-alert("hello " + myName);
-document.write(myName+" is here :D");
-```
-
-Save your file and refresh the browser to see JavaScript modify your page in real-time!
-
-So yeah. That's a basic introduction to HTML, CSS, and JavaScript. No one has ever quite mastered any of them, so we're safe to leave off for now.
-
 ## Complete Example
 
 Check out the `result.html` file in this repository to see a complete working example that demonstrates all these concepts together! You can open it in your browser to see a fully functional webpage with:
@@ -373,80 +343,10 @@ Try modifying the `result.html` file to:
 
 ---
 
-# Part 2: Making Your Website Live on the Internet
-
-Now that you've created a website locally, you probably want to share it with the world! Here are two excellent options for hosting your HTML, CSS, and JavaScript files for free.
-
-## Option 1: Vercel (Recommended for Beginners)
-
-[Vercel](https://vercel.com/) is a modern hosting platform that's perfect for static websites. It's completely free for personal projects and incredibly easy to use.
-
-### Getting Started with Vercel
-
-1. **Create a Vercel account**: Go to [vercel.com](https://vercel.com/) and sign up with your GitHub account (recommended) or email
-
-2. **Prepare your files**: Make sure all your HTML, CSS, and JavaScript files are in a single folder on your computer
-
-3. **Deploy your site**:
-   - Click "New Project" in your Vercel dashboard
-   - Choose "Import Git Repository" if your code is on GitHub, or
-   - Drag and drop your folder directly onto the Vercel website
-   - Vercel will automatically deploy your site and give you a live URL!
-
-4. **Your site is live**: Vercel will provide you with a URL like `your-project-name.vercel.app` that you can share with anyone
-
-### Benefits of Vercel:
-- ✅ **Free forever** for personal projects
-- ✅ **Automatic HTTPS** (secure connections)
-- ✅ **Global CDN** (fast loading worldwide)
-- ✅ **Custom domains** (you can use your own domain name)
-- ✅ **Automatic deployments** (if connected to GitHub, updates when you push code)
-
-## Option 2: University public_html Folder
-
-If you're a student at Kent State or another university, you likely have access to a `public_html` folder on the university servers.
-
-### Using public_html at Kent State
-
-1. **Access your home directory**: 
-   - Connect to the university servers wasp, hornet, or scorpion the same way you would for cs2 or cs3
-   - Look for a folder called `public_html` in your home directory
-
-2. **Upload your files**:
-   - Copy your HTML, CSS, and JavaScript files into the `public_html` folder
-   - Make sure your main page is named `index.html`
-
-3. **Access your site**:
-   - Your website will be available at a URL like: `https://www.cs.kent.edu/~yourusername/`
-   - Replace `yourusername` with your actual university username
-
-### Benefits of public_html:
-- ✅ **Free** (included with your student account)
-- ✅ **Educational** (good for learning about traditional web hosting)
-- ✅ **University resources** (often has good bandwidth and uptime)
-
-## Which Option Should You Choose?
-
-**Choose Vercel if:**
-- You want the easiest setup process
-- You plan to continue web development after graduation
-- You want modern features like automatic deployments
-- You want to learn industry-standard tools
-- You want to learn more common web frameworks, like react, svelte, and vue
-
-**Choose public_html if:**
-- You want to learn traditional web hosting
-- You're comfortable with file transfer protocols (FTP/SFTP)
-- You want to keep everything within university systems
-- You're interested in understanding how web servers work
-
-## Making Your Site Even Better
-
-Once your site is live, consider these improvements:
-
-### Performance
-- **Optimize images**: Use tools like [TinyPNG](https://tinypng.com/) to compress images
-- **Minify CSS/JS**: Remove unnecessary spaces and comments for faster loading
+### SEO (Search Engine Optimization)
+- Add a `<title>` tag with a descriptive page title
+- Include `<meta>` tags for descriptions and keywords
+- Use semantic HTML tags like `<header>`, `<main>`, `<footer>`
 
 ### Accessibility
 - Add `alt` attributes to all images
@@ -502,8 +402,6 @@ Once your site is live, consider these improvements:
 - Check the browser console (F12) for error messages
 - Verify all script tags are properly closed
 - Make sure JavaScript is placed before the closing `</body>` tag
-
-Now you have the power to create websites and share them with the world! 🌐
 
 ---
 
@@ -591,23 +489,6 @@ Once your site is live, consider these improvements:
 - Use proper heading hierarchy (h1, h2, h3...)
 - Ensure good color contrast
 
-## Troubleshooting Common Issues
-
-**Site not loading?**
-- Check that your main file is named `index.html`
-- Verify all file paths are correct (case-sensitive on most servers)
-- Make sure images and CSS files are uploaded to the correct locations
-
-**Styling not working?**
-- Check that CSS file paths are correct
-- Verify there are no typos in your CSS selectors
-- Use browser developer tools (F12) to debug
-
-**JavaScript not working?**
-- Check the browser console (F12) for error messages
-- Verify all script tags are properly closed
-- Make sure JavaScript is placed before the closing `</body>` tag
-
 ## Your Journey Continues
 
 Congratulations! You now have the skills to:
@@ -618,4 +499,4 @@ Congratulations! You now have the skills to:
 
 Your portfolio is more than just a website - it's your professional presence on the internet. Keep adding projects, learning new technologies, and improving your skills. The web development journey is just beginning! 🚀
 
-Other things that could be added: pre tag, input tag (after covering javascript? text input for adding item to to-do list?), class selectors, asterisk selector e.g. to set the font for everything
+---
