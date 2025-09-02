@@ -42,13 +42,25 @@ Every webpage has this basic template:
 
 This is the basic template for an HTML page. You can copy this template, paste it into a text editor (like Notepad on Windows, TextEdit on macOS in plain text mode, or VS Code), save it with a `.html` extension (like `my-webpage.html`), and then open it in your web browser to see your webpage!
 
+## Prerequisites
+
+Before you start, we recommend setting up VS Code with the Live Server extension for the best development experience:
+
+1. **Install VS Code**: Download from [code.visualstudio.com](https://code.visualstudio.com/) if you haven't already
+2. **Install Live Server extension**: 
+   - Open VS Code
+   - Go to Extensions (Ctrl+Shift+X or Cmd+Shift+X)
+   - Search for "Live Server" by Ritwick Dey
+   - Click Install
+3. **You're ready!** Now you can right-click any HTML file and select "Open with Live Server" for automatic browser refresh
+
 ## Quick Start Guide
 
-1. **Create a new HTML file**: Open your text editor and create a new file
+1. **Create a new HTML file**: Open VS Code and create a new file
 2. **Copy the basic template**: Use the template above as your starting point  
 3. **Save the file**: Save it with a `.html` extension (like `practice.html`)
-4. **Open in browser**: Double-click the file to open it in your default web browser
-5. **Edit and refresh**: Make changes to your HTML file, save it, then refresh the browser to see your changes
+4. **Open with Live Server**: Right-click the file and select "Open with Live Server"
+5. **Edit and see changes**: Make changes to your HTML file, save it, and watch the browser automatically refresh!
 
 We also have a ready-to-use `template.html` file in this repository that you can copy!
 
@@ -330,6 +342,7 @@ Check out the `result.html` file in this repository to see a complete working ex
 
 - **Save frequently**: Always save your HTML file before refreshing the browser
 - **Use a good text editor**: VS Code, Sublime Text, or even Notepad++ work well
+- **Use Live Server extension**: If you're using VS Code, install the "Live Server" extension for automatic browser refresh when you save files
 - **Open Developer Tools**: Press F12 in most browsers to see errors and inspect your code
 - **Test in multiple browsers**: Different browsers may display things slightly differently
 
