@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Your Name</title>
+    <meta name="description" content="Get in touch with me">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title"><a href="index.html">Your Name</a></h1>
+            <ul class="nav-menu">
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <!-- Contact Section -->
+    <section id="contact" class="page-section">
+        <div class="container">
+            <!-- TODO: Customize your contact page title -->
+            <h1 class="page-title">Get In Touch</h1>
+            <!-- TODO: Write an inviting subtitle that encourages people to reach out -->
+            <p class="page-subtitle">I'm always open to discussing new opportunities and interesting projects</p>
+            
+            <div class="contact-container">
+                
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2>Let's Connect!</h2>
+                    <!-- TODO: Write a welcoming message that reflects your personality -->
+                    <p>Whether you have a project in mind, want to collaborate, or just want to say hello, I'd love to hear from you!</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <!-- TODO: Replace with your actual email address -->
+                                <a href="mailto:your.email@example.com">your.email@example.com</a>
+                                <p>Best way to reach me for professional inquiries</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">🐱</div>
+                            <div class="contact-details">
+                                <h3>GitHub</h3>
+                                <!-- TODO: Replace 'yourusername' with your actual GitHub username -->
+                                <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
+                                <p>Check out my code and contributions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">💼</div>
+                            <div class="contact-details">
+                                <h3>LinkedIn</h3>
+                                <!-- TODO: Replace 'yourusername' with your LinkedIn username -->
+                                <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a>
+                                <p>Let's connect professionally</p>
+                            </div>
+                        </div>
+                        
+                        <!-- OPTIONAL: Add other ways to connect -->
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-details">
+                                <h3>Discord</h3>
+                                <a href="#">yourusername#1234</a>
+                                <p>For casual chats and collaboration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form - This is fully functional with validation! -->
+                <div class="contact-form-container">
+                    <h2>Send Me a Message</h2>
+                    <!-- TODO: You can customize this form or connect it to a real email service -->
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <!-- Required field - the form won't submit without this -->
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="What's this about?">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or just say hello!"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loading" style="display: none;">Sending...</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+            
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>What type of projects do you work on?</h3>
+                        <p>I enjoy working on web development projects, especially those involving frontend technologies. I'm open to collaborating on personal projects, open source contributions, and learning opportunities.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Are you available for internships?</h3>
+                        <p>Yes! I'm actively looking for internship opportunities where I can apply my skills and continue learning. I'm particularly interested in frontend development and full-stack roles.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>How quickly do you respond to messages?</h3>
+                        <p>I typically respond to emails and messages within 24-48 hours. For urgent matters, LinkedIn or Discord might be faster ways to reach me.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Do you do freelance work?</h3>
+                        <p>I'm open to small freelance projects, especially those that help me learn new technologies or work with interesting challenges. Feel free to reach out with your ideas!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="contact-cta">
+                <h2>Ready to work together?</h2>
+                <p>I'm excited to hear about your ideas and explore how we can bring them to life!</p>
+                <div class="cta-buttons">
+                    <a href="mailto:your.email@example.com" class="cta-button primary">Email Me</a>
+                    <a href="https://linkedin.com/in/yourusername" class="cta-button secondary" target="_blank">Connect on LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Name. Built with HTML, CSS, and JavaScript.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="contact-form.js"></script>
+</body>
+</html>
